@@ -1,11 +1,12 @@
 import { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Navigation from "./Navigation";
+import {connect} from 'react-redux'
 
 
 
-export default class Signup extends Component{
-
+ class Signup extends Component{
     state = {
         username: "",
         email: "",
@@ -22,12 +23,14 @@ export default class Signup extends Component{
     handleSubmit = (event) => {
         event.preventDefault()
         console.log("User current signing up:", this.state)
+        this.props.addUser(this.state)
     }
 
-      
     render(){
         return(
-            <Form onSubmit={this.handleSubmit}>
+            <div>
+                <Navigation />
+                 <Form onSubmit={this.handleSubmit}>
                  <Form.Group className="mb-3" controlId="formBasicUsername">
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="text" placeholder="Enter username" value={this.state.username} name="username"  onChange={this.handleChange}/>
@@ -56,9 +59,19 @@ export default class Signup extends Component{
                 </Button>
                 <br></br>
                 <br></br>
-                <p>Or SignUp with Google</p>
-    </Form>
+            </Form>
+            <p>Or SignUp with Google</p>
+            </div>  
         );
     }
 }
 
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addUser: (user) => dispatch({type: "ADD_USER", payload: user}),
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(Signup)

@@ -1,6 +1,6 @@
 import {Component} from "react"
 import Navigation from "../components/Navigation"
-// import {connect} from "react-redux"
+
 
 
 

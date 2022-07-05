@@ -4,17 +4,16 @@ import 'bootstrap/dist/css/bootstrap.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {Component} from 'react'
 
+
+
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
 import User from './containers/User';
 
+
 class App extends Component  {
   
-  state = {
-    username: "",
-  }
-
 
   render(){
 
@@ -33,8 +32,6 @@ class App extends Component  {
     );
 
   }
- 
-  
 }
 
 function NotFound(){
@@ -42,5 +39,8 @@ function NotFound(){
     Not found
     </div>)
 }
+
+
+
 
 export default App;
