@@ -13,6 +13,21 @@ import User from './containers/User';
 
 
 class App extends Component  {
+
+
+  // for test
+  // componentDidMount(){
+
+  //     fetch("http://localhost:3000/api/v1/users")
+  //     .then((res) => res.json() )
+  //     .then(data => console.log(data))
+
+
+  // }
+
+    // state = {
+    //   signedInUser: ""
+    // }
   
 
   render(){

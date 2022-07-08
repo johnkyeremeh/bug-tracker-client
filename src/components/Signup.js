@@ -4,6 +4,9 @@ import Form from 'react-bootstrap/Form';
 import Navigation from "./Navigation";
 import {connect} from 'react-redux'
 
+import signedUpUser from "../actions/user"
+
+
 
 
  class Signup extends Component{
@@ -11,7 +14,7 @@ import {connect} from 'react-redux'
         username: "",
         email: "",
         password: "",
-        confirmPassword: ""
+        // confirmPassword: ""
       }
       
     handleChange = (event) => {
@@ -22,8 +25,19 @@ import {connect} from 'react-redux'
     
     handleSubmit = (event) => {
         event.preventDefault()
+        const user = {
+            username: this.state.username,
+            email: this.state.email, 
+            password: this.state.password
+        }
         console.log("User current signing up:", this.state)
-        this.props.addUser(this.state)
+        this.props.addUser(user)
+
+        this.setState({
+            username: "",
+            email: "",
+            password: "",
+        })
     }
 
     render(){
@@ -69,9 +83,10 @@ import {connect} from 'react-redux'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addUser: (user) => dispatch({type: "ADD_USER", payload: user}),
+        addUser: (user) => dispatch({type: "CREATE_USER", payload: user}),
     }
 }
+
 
 
 export default connect(null, mapDispatchToProps)(Signup)

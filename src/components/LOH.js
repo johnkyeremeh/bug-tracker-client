@@ -9,7 +9,7 @@ export default class LOH extends Component{
         return(
         <div>
            <NavigationContainer/>
-           <h2>Welcome Home Message</h2>
+           <h2>Welcome </h2>
         </div>)
     }
 }
