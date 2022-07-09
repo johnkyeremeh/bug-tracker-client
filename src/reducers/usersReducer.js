@@ -1,9 +1,4 @@
-
-
-
-
-
-export default function usersReducer(state = []
+export default function users(state = []
 , action) {
   console.log(action)
   switch(action.type) {

@@ -3,8 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {Component} from 'react'
-
-
+import {connect} from "react-redux"
+import { getCurrentUser } from './actions/currentUser';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -16,18 +16,10 @@ class App extends Component  {
 
 
   // for test
-  // componentDidMount(){
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
 
-  //     fetch("http://localhost:3000/api/v1/users")
-  //     .then((res) => res.json() )
-  //     .then(data => console.log(data))
-
-
-  // }
-
-    // state = {
-    //   signedInUser: ""
-    // }
   
 
   render(){
@@ -58,4 +50,4 @@ function NotFound(){
 
 
 
-export default App;
+export default connect(null, {getCurrentUser})(App);
