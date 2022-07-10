@@ -15,11 +15,31 @@ import User from './containers/User';
 class App extends Component  {
 
 
-  // for test
+  // // for test
   componentDidMount(){
-    this.props.getCurrentUser()
+    const token = localStorage.getItem("token")
+
+    if (token) {
+      this.props.getCurrentUser(token)
+    }
+
   }
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token")
+  //   if(token){
+  //     fetch(`http://localhost:3000/auto_login`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`
+  //       }
+  //     })
+  //     .then(resp => resp.json())
+  //     .then(data => {
+  //       setUser(data)
+  //       // console.log(data)
+  //     })
+  //   }
+  // }, [])
   
 
   render(){

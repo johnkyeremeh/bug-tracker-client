@@ -1,9 +1,7 @@
 
 export default function currentUserReducer(state = null
     , action) {
-      
-      
-      console.log("hitting the currentUserReducer", action)
+      console.log("current user is", action.payload)
       switch(action.type) {
         case "SET_CURRENT_USER":
             return action.payload

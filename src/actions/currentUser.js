@@ -1,5 +1,6 @@
 // synchronomous action creators 
 export const setCurrentUser = (user) => {
+    
     return {
         type: "SET_CURRENT_USER",
         payload: user 
@@ -10,6 +11,7 @@ export const setCurrentUser = (user) => {
 
 // asynchronous action creators 
 export const login = credentials => {
+
 
     console.log("crediantials are:", credentials)
     
@@ -27,8 +29,11 @@ export const login = credentials => {
         })
         .then(res => res.json())
         .then(data => {
+       
+    
             if (data !== undefined) {
-                // localStorage.setItem("token", data.jwt)
+
+                localStorage.setItem("token", data.jwt)
                 alert("Successfully Signed Up")
                  dispatch(setCurrentUser(data))
             } else {
@@ -43,7 +48,7 @@ export const login = credentials => {
     }
 }
 
-export const getCurrentUser = () => {
+export const getCurrentUser = (token) => {
 
 
     console.log("DISPATCHING GET CURRENT USER")
@@ -53,19 +58,18 @@ export const getCurrentUser = () => {
             credentials: "include",
             method: "GET",
             headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
+                Authorization: `Bearer ${token}`
             },
         })
         .then(res => res.json())
         .then(data => {
-        
+       
             console.log("getting the current user", data)
-        
+
             if (data !== undefined) {
-                console.log("User data we are fetching", data.user)
+                console.log("User data we are fetching", data)
                 // localStorage.setItem("token", data.jwt)
-                alert("Successfully found current user")
+                alert("Successfully logged in")
                  dispatch(setCurrentUser(data))
             } else {
                 alert(data.errors.map(error => error))
