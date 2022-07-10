@@ -1,6 +1,21 @@
+// import React from "react"
+// import {connect} from "react-redux"
+// import { useHistory } from "react-router-dom"
 
-const onLogOut = () => {
-    localStorage.removeItem("token")
-    
-    history.push("/login")
-}
+
+
+
+ 
+
+
+
+// export default connect(null, {LogoutUser})(Logout)
+
+
+
+
+
+
+
+
+

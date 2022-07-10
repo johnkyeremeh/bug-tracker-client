@@ -1,11 +1,18 @@
 // synchronomous action creators 
 export const setCurrentUser = (user) => {
-    
     return {
         type: "SET_CURRENT_USER",
         payload: user 
     }
 }
+
+//remove user from the current user from the store 
+export const clearCurrentUser = () => {
+    return {
+        type: "CLEAR_CURRENT_USER"
+    }
+}
+
 
 
 
@@ -81,5 +88,9 @@ export const getCurrentUser = (token) => {
         })
     }
 }
+
+
+
+
 
 
