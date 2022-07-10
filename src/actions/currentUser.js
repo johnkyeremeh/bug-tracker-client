@@ -12,7 +12,6 @@ export const setCurrentUser = (user) => {
 // asynchronous action creators 
 export const login = credentials => {
 
-
     console.log("crediantials are:", credentials)
     
     return dispatch => {
@@ -82,3 +81,5 @@ export const getCurrentUser = (token) => {
         })
     }
 }
+
+
