@@ -18,6 +18,7 @@ export const login = credentials => {
 
         return fetch("http://localhost:3000/api/v1/login", {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -26,10 +27,10 @@ export const login = credentials => {
         })
         .then(res => res.json())
         .then(data => {
-            if (data.user !== undefined) {
+            if (data !== undefined) {
                 // localStorage.setItem("token", data.jwt)
                 alert("Successfully Signed Up")
-                 dispatch(setCurrentUser(data.user))
+                 dispatch(setCurrentUser(data))
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
@@ -49,6 +50,7 @@ export const getCurrentUser = () => {
     return dispatch => {
         
         return fetch("http://localhost:3000/api/v1/auto_login", {
+            credentials: "include",
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -57,12 +59,14 @@ export const getCurrentUser = () => {
         })
         .then(res => res.json())
         .then(data => {
+        
             console.log("getting the current user", data)
-            if (data.user !== undefined) {
+        
+            if (data !== undefined) {
                 console.log("User data we are fetching", data.user)
                 // localStorage.setItem("token", data.jwt)
                 alert("Successfully found current user")
-                 dispatch(setCurrentUser(data.user))
+                 dispatch(setCurrentUser(data))
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
