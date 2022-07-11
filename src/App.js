@@ -6,6 +6,8 @@ import {Component} from 'react'
 import {connect} from "react-redux"
 import { getCurrentUser } from './actions/currentUser';
 
+
+
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
@@ -68,6 +70,11 @@ function NotFound(){
 }
 
 
+const mapStatetoProps = (state) => {
+  return {
+    currentUser: state.currentUser
+  }
+}
 
 
-export default connect(null, {getCurrentUser})(App);
+export default connect(mapStatetoProps, {getCurrentUser})(App);
