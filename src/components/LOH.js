@@ -1,15 +1,17 @@
 import { Component } from "react";
 import NavigationContainer from "../containers/NavigationContainer";
-
+import MainComponent from "./MainComponent";
+import Container from 'react-bootstrap/Container';
 export default class LOH extends Component{
 
   
 
     render(){
         return(
-        <div>
+        <Container className="p-3">
            <NavigationContainer/>
-           <h2>Welcome </h2>
-        </div>)
+           <MainComponent />
+        </Container>
+        )
     }
 }

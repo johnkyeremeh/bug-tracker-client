@@ -39,18 +39,16 @@ function Navigation(props) {
         <Navbar.Brand href="/">BugTracker App</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          {props.currentUser? 
-          <>
-            <Navbar.Text>
+          {props.currentUser ?  
+          <Navbar.Text>
               Signed in as: <a href="#login">{props.currentUser.username}</a>
-            </Navbar.Text>
-            <Button onClick={LogoutUser} href="" variant="outline-light">Log Out</Button>
-          </> : 
+            </Navbar.Text> : "" }
+          {props.currentUser ? <Button onClick={LogoutUser} href="" variant="outline-light">Log Out</Button> : 
           <>
-            <Nav.Link  className="linkText" href="./login">Sign in</Nav.Link>
-            <Button href="/signup"variant="outline-light">Sign Up</Button>
-            <Button onClick={LogoutUser} href="" variant="outline-light">Log Out</Button>
-          </>}
+         <Nav.Link  className="linkText" href="./login">Sign in</Nav.Link>
+          <Button href="/signup"variant="outline-light">Sign Up</Button>
+          </>
+           }
         </Navbar.Collapse>
       </Container>
     </Navbar>
