@@ -8,7 +8,9 @@ export default function LoginFormReducer(state = initialState
     
       switch(action.type) {
         case "UPDATE_LOGIN_FORM":
-            return action.payload
+            return action.payload;
+        case "CLEAR_LOGIN_FORM":
+            return initialState;
         default:
           return state;
       }

@@ -1,3 +1,6 @@
+
+import { clearLoginForm } from "./loginForm"
+
 // synchronomous action creators 
 export const setCurrentUser = (user) => {
     return {
@@ -40,12 +43,13 @@ export const login = credentials => {
         //user 
             //data:
                 //iformation
-
+            debugger
     
             if (data !== undefined) {
                 localStorage.setItem("token", data.jwt)
                 alert("Successfully Signed Up")
                  dispatch(setCurrentUser(data.user))
+                 dispatch(clearLoginForm())
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
@@ -57,6 +61,14 @@ export const login = credentials => {
         })
     }
 }
+
+
+
+
+
+
+
+
 
 export const getCurrentUser = (token) => {
 
@@ -74,6 +86,7 @@ export const getCurrentUser = (token) => {
         .then(res => res.json())
         .then(data => {
        
+            debugger
             console.log("getting the current user", data)
 
             if (data !== undefined) {

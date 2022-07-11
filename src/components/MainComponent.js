@@ -13,7 +13,7 @@ class MainComponent extends Component{
 
     render(){
         return(
-            <div class="jumbotron">
+            <div className="jumbotron">
             <h1>Bug Tracker Project</h1>
             <p>
               This is a simple hero unit, a simple jumbotron-style component for calling
@@ -22,7 +22,7 @@ class MainComponent extends Component{
               extra attention to featured content or information.
             </p>
             <p>
-              <Button bsStyle="primary">Learn more</Button>
+              <Button variant="primary">Learn more</Button>
             </p>
             <CardGroup>
   <Card>
@@ -33,7 +33,7 @@ class MainComponent extends Component{
         additional content. This content is a little bit longer.
       </Card.Text>
          <p>
-            <Button bsStyle="primary">Learn more</Button>
+            <Button variant="primary">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
@@ -48,7 +48,7 @@ class MainComponent extends Component{
         content.{' '}
       </Card.Text>
       <p>
-            <Button bsStyle="primary">Learn more</Button>
+            <Button variant="primary">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
@@ -64,7 +64,7 @@ class MainComponent extends Component{
         show that equal height action.
       </Card.Text>
       <p>
-            <Button bsStyle="primary">Learn more</Button>
+            <Button variant="primary">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
