@@ -20,7 +20,7 @@ code {
   padding-right: 15px;
 }
 
-/* @media screen and (min-width: 768px)
+@media screen and (min-width: 768px)
 {
 .container-fluid .jumbotron, .container .jumbotron {
     padding-left: 60px;
@@ -34,7 +34,7 @@ code {
     padding-bottom: 48px;
     padding-top: 48px;
 }
-} */
+}
 
 .jumbotron {
   background-color: #eee;
@@ -46,7 +46,16 @@ code {
 }
 
 
+
+
+
+
+
 .justify-content-end{
   justify-content: flex-end;
   gap: 15px;
+}
+
+.Nav-linkText{
+  display: flex;
 }

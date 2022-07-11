@@ -17,7 +17,7 @@ import User from './containers/User';
 class App extends Component  {
 
 
-  // // for test
+  // for test
   componentDidMount(){
     const token = localStorage.getItem("token")
 

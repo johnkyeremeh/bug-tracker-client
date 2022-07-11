@@ -35,13 +35,17 @@ export const login = credentials => {
         })
         .then(res => res.json())
         .then(data => {
-       
+            debugger
+        console.log("login data: ", data)
+        //user 
+            //data:
+                //iformation
+
     
             if (data !== undefined) {
-
                 localStorage.setItem("token", data.jwt)
                 alert("Successfully Signed Up")
-                 dispatch(setCurrentUser(data))
+                 dispatch(setCurrentUser(data.user))
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
@@ -76,7 +80,7 @@ export const getCurrentUser = (token) => {
                 console.log("User data we are fetching", data)
                 // localStorage.setItem("token", data.jwt)
                 alert("Successfully logged in")
-                 dispatch(setCurrentUser(data))
+                 dispatch(setCurrentUser(data.user))
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })

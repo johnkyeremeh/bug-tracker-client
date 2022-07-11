@@ -37,11 +37,17 @@ function Navigation(props) {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">BugTracker App</Navbar.Brand>
+        {props.currentUser ? 
+        <span className="Nav-linkText" >
+          <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
+         <Nav.Link  className="linkText" href="./login">My Bugs</Nav.Link> 
+        </span> 
+         : ""}
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           {props.currentUser ?  
           <Navbar.Text>
-              Signed in as: <a href="#login">{props.currentUser.username}</a>
+              Signed in as: <a href="#login">{props.currentUser.data.attributes.username}</a>
             </Navbar.Text> : "" }
           {props.currentUser ? <Button onClick={LogoutUser} href="" variant="outline-light">Log Out</Button> : 
           <>
