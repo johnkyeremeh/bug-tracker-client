@@ -11,7 +11,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
-import User from './containers/User';
+import HOME from './components/Home';
 
 
 class App extends Component  {
@@ -28,9 +28,7 @@ class App extends Component  {
       <Router>
          <Switch>
             <Route exact path="/" component={LOH} />
-            <Route
-             path="/app/:username"
-             render={(routerProps) => <User {...routerProps} username={this.state.username} />}/>
+            <Route exact path="/home" component={HOME} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} /> 
             <Route path="*" component={NotFound}/>
