@@ -24,7 +24,7 @@ function Navigation(props) {
     event.preventDefault()
     props.dispatch(clearCurrentUser())
     
-    localStorage.removeItem("token")
+    // localStorage.removeItem("token")
 
     // window.location.reload(true);
     history.push("/login")

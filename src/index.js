@@ -11,7 +11,7 @@ import { Provider } from 'react-redux'
 import usersReducer from './reducers/usersReducer';
 import currentUserReducer from './reducers/currentUser';
 import LoginFormReducer from './reducers/loginForm';
-import myProjects from './reducers/myProjects';
+import myBugs from './reducers/myBugs';
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
   users: usersReducer,
   currentUser: currentUserReducer,
   loginForm: LoginFormReducer,
-  myProjects: myProjects
+  myBugs: myBugs
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

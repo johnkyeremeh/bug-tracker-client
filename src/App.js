@@ -18,14 +18,9 @@ class App extends Component  {
 
 
   // for test
-  // componentDidMount(){
-  //   const token = localStorage.getItem("token")
-
-  //   if (token) {
-  //     this.props.getCurrentUser(token)
-  //   }
-
-  // }
+  componentDidMount(){
+      this.props.getCurrentUser()
+  }
 
   render(){
 
