@@ -1,9 +1,9 @@
 //sync 
 
-export const setMyBugs = (bug) => {
+export const setMyBugs = (bugs) => {
     return {
         type: "SET_MY_BUGS",
-        payload: bug 
+        payload: bugs
     }
 }
 
@@ -18,11 +18,7 @@ export const createMyBug = (bug) => {
 
 export const getMyBugs = () => {
 
-    
 
-    // if (typeof window !== 'undefined') {
-    //     LocalStorage.getItem("token")
-    // }
 
     console.log("Starting task to get current user data")
     return dispatch => {
@@ -36,10 +32,13 @@ export const getMyBugs = () => {
         .then(res => res.json())
         .then(data => {
        
-            debugger
+
             console.log("fetched current user data", data)
             if (data !== undefined) {
-                 dispatch(setMyBugs(data))
+                 dispatch(setMyBugs(data.bugs))
+               
+
+
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
