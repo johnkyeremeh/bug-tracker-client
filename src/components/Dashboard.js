@@ -1,17 +1,13 @@
 import {Component} from "react"
-
+import BugsContainer from "../containers/BugsContainer";
 
 class Dashboard extends Component{
 
     render(){
         return(
-            <div className="">
-            
-          </div>)
-    }
-
-
-
+          < BugsContainer />
+        );
+      }
 }
 
-export default MainComponent
+export default Dashboard

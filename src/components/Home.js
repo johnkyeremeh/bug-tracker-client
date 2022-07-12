@@ -1,14 +1,15 @@
 import { Component } from "react";
 import NavigationContainer from "../containers/NavigationContainer";
+import BugsContainer from "../containers/BugsContainer";
 
-export default class HOME extends Component{
+export default class Home extends Component{
 
     render(){
-        return(
-        <>
-           <NavigationContainer/>
-       
-        </>
+        return( 
+            <div>
+                < NavigationContainer/>
+                < BugsContainer />
+            </div>
         )
     }
 }
