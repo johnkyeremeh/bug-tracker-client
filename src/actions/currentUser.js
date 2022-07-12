@@ -1,6 +1,6 @@
 
 import { clearLoginForm } from "./loginForm"
-import { getMyBugs } from "./myBugs"
+import { getMyBugs} from "./myBugs"
 
 // synchronomous action creators 
 export const setCurrentUser = (user) => {
@@ -44,12 +44,12 @@ export const login = credentials => {
 
     
             if (data !== undefined) {
-                debugger
                 // localStorage.setItem("token", data.jwt)
-                alert("Successfully Signed Up")
+                // alert("Successfully Signed Up")
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
                  dispatch(getMyBugs())
+            
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
@@ -84,7 +84,7 @@ export const getCurrentUser = (token) => {
             if (data !== undefined) {
                 console.log("User data we are fetching", data)
                 // localStorage.setItem("token", data.jwt)
-                alert("Successfully logged in")
+                // alert("Successfully logged in")
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
                  dispatch(getMyBugs())
