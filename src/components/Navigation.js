@@ -37,8 +37,11 @@ function Navigation(props) {
         <Navbar.Brand href="/">BugTracker App</Navbar.Brand>
         {props.currentUser ? 
         <span className="Nav-linkText" >
-          <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
+                    <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
+          <Nav.Link  className="linkText" href="./login">Current Projects</Nav.Link>
+          <Nav.Link  className="linkText" href="./login">Current Bugs</Nav.Link> 
          <Nav.Link  className="linkText" href="./login">My Bugs</Nav.Link> 
+
         </span> 
          : ""}
         <Navbar.Toggle />

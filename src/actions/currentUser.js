@@ -38,12 +38,12 @@ export const login = credentials => {
         })
         .then(res => res.json())
         .then(data => {
-            debugger
+
         console.log("login data: ", data)
         //user 
             //data:
                 //iformation
-            debugger
+      
     
             if (data !== undefined) {
                 localStorage.setItem("token", data.jwt)
@@ -86,12 +86,12 @@ export const getCurrentUser = (token) => {
         .then(res => res.json())
         .then(data => {
        
-            debugger
+   
             console.log("getting the current user", data)
 
             if (data !== undefined) {
                 console.log("User data we are fetching", data)
-                // localStorage.setItem("token", data.jwt)
+                localStorage.setItem("token", data.jwt)
                 alert("Successfully logged in")
                  dispatch(setCurrentUser(data.user))
             } else {
