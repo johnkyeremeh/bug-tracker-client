@@ -1,4 +1,5 @@
 
+import { setLoggedIn } from "./auth"
 import { clearLoginForm } from "./loginForm"
 import { getMyBugs} from "./myBugs"
 
@@ -16,8 +17,6 @@ export const clearCurrentUser = () => {
         type: "CLEAR_CURRENT_USER"
     }
 }
-
-
 
 
 // asynchronous action creators 
@@ -46,9 +45,11 @@ export const login = credentials => {
             if (data !== undefined) {
                 // localStorage.setItem("token", data.jwt)
                 // alert("Successfully Signed Up")
+                dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
-                 dispatch(getMyBugs())
+               
+                //  dispatch(getMyBugs())
             
             } else {
                 alert(data.errors.map(error => error))
@@ -69,7 +70,6 @@ export const getCurrentUser = (token) => {
 
     console.log("DISPATCHING GET CURRENT USER")
     return dispatch => {
-        
         return fetch("http://localhost:3000/api/v1/auto_login", {
             credentials: "include",
             method: "GET",
@@ -85,9 +85,10 @@ export const getCurrentUser = (token) => {
                 console.log("User data we are fetching", data)
                 // localStorage.setItem("token", data.jwt)
                 // alert("Successfully logged in")
+                dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
-                 dispatch(getMyBugs())
+                //  dispatch(getMyBugs())
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })

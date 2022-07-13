@@ -1,30 +1,41 @@
 import {Component} from "react"
 
-import { Table, Thead, Tr, Th} from 'react-super-responsive-table'
-import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+import Table from 'react-bootstrap/Table';
 
 import BugTable from "./BugTable";
+import { getMyBugs } from "../actions/myBugs";
+
+
 
 
 class MyBugsList extends Component{
+ 
 
-   myBugsListItems = this.props.myBugs.map(bug => <BugTable key={bug.id} bug={bug}/>)
+   myBugsListItems = this.props.length > 0 ? this.props.myBugs.map(bug => <BugTable key={bug.id}  bug={bug}/>) : null 
+
+  //  componentDidMount(){
+  //   return dispatch => {
+  //     dispatch(getMyBugs())
+  //   }
+  // }
+
     render(){
 
+  
       return (
         <Table>
-          <Thead>
-            <Tr>
-              <Th>Bug ID</Th>
-              <Th>Summary</Th>
-              <Th>Assigned</Th>
-              <Th>Status</Th>
-              <Th>Priority</Th>
-              <Th>Created</Th>
-              <Th>Learn</Th>
-            </Tr>
-          </Thead>
-          {this.myBugsListItems}
+          <thead>
+            <tr>
+              <th>Bug ID</th>
+              <th>Summary</th>
+              <th>Assigned</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Created</th>
+              <th>Learn</th>
+            </tr>
+          </thead>
+          {/* {this.myBugsListItems} */}
         </Table>)
     }
 }

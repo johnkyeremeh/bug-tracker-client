@@ -1,23 +1,22 @@
 import { Component } from "react";
-import {  Tbody, Tr,  Td } from 'react-super-responsive-table'
+
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 
 class BugTable extends Component{
     render(){
         return (
-
-        <Tbody>
-            <Tr>
-              <Td>{this.props.bug.id}</Td>
-              <Td>{this.props.bug.attributes.description}</Td>
-              <Td>John Kyeremeh</Td>
-              <Td>{this.props.bug.attributes.status}</Td>
-              <Td>{this.props.bug.attributes.priority}</Td>
-              <Td>CREATED DATE</Td>
-              <Td>CREATED DATE</Td>
-            </Tr>
-          </Tbody>)}
+        <tbody>
+            <tr>
+              <td>{this.props.bug.id}</td>
+              <td>{this.props.bug.attributes.description}</td>
+              <td>John Kyeremeh</td>
+              <td>{this.props.bug.attributes.status}</td>
+              <td>{this.props.bug.attributes.priority}</td>
+              <td>CREATED DATE</td>
+              <td>CREATED DATE</td>
+            </tr>
+          </tbody>)}
 }
 
 export default BugTable

@@ -12,6 +12,7 @@ import usersReducer from './reducers/usersReducer';
 import currentUserReducer from './reducers/currentUser';
 import LoginFormReducer from './reducers/loginForm';
 import myBugs from './reducers/myBugs';
+import LoggedIn from './reducers/auth';
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   users: usersReducer,
   currentUser: currentUserReducer,
   loginForm: LoginFormReducer,
-  myBugs: myBugs
+  myBugs: myBugs,
+  loggedIn: LoggedIn
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -32,9 +34,12 @@ const store = createStore(
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

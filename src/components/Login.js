@@ -6,10 +6,8 @@ import { login } from "../actions/currentUser";
 
 const Login = ({ loginFormData, updateLoginForm, login}) => {
 
-    
     const handleChange = event => {
         const { name, value } = event.target 
-        
         const updatedFormInfo = {
             ...loginFormData,
             [name]: value
@@ -19,13 +17,8 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-
         login(loginFormData)
-
     }
-
-    
-
 
     return(
         <div>
@@ -42,11 +35,6 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
    
 }
 
-//this gives me an argument that comes into this component that looks like this:
-// {
-//     username: "test"
-//     password:  "password"
-// }
 
 const mapStateToProps = (state) => {
     return {

@@ -26,6 +26,7 @@ class App extends Component  {
 
     return (
       <Router>
+        {this.props.currentUser ? "Logged In ON" : "Logged Off"}
          <Switch>
             <Route exact path="/" component={LOH} />
             <Route exact path="/home" component={HOME} />
