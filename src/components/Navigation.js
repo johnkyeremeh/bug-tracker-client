@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import { clearCurrentUser } from '../actions/currentUser';
 import {connect} from "react-redux"
 
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 // import Logout from './Logout';
@@ -24,11 +23,6 @@ function Navigation(props) {
     event.preventDefault()
     props.dispatch(clearCurrentUser())
     props.dispatch(clearCurrentUser())
-
-    
-    // localStorage.removeItem("token")
-
-    // window.location.reload(true);
     history.push("/login")
 }
 
@@ -40,9 +34,10 @@ function Navigation(props) {
         <Navbar.Brand href="/">BugTracker App</Navbar.Brand>
         {props.currentUser ? 
         <span className="Nav-linkText" >
-                    <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
+          <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
+          {props.currentUser.type === "user" ? <Nav.Link  className="linkText" href="./login">ADMIN VIEW!!!</Nav.Link> : "Not ADMIN"}
           <Nav.Link  className="linkText" href="./projects">Current Projects</Nav.Link>
-          <Nav.Link  className="linkText" href="./bugs">Current Bugs</Nav.Link> 
+          <Nav.Link  className="linkText" href="./home">Current Bugs</Nav.Link> 
          <Nav.Link  className="linkText" href="./login">My Bugs</Nav.Link> 
 
         </span> 

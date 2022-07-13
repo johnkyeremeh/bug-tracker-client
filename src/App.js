@@ -11,7 +11,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
-import HOME from './components/Home';
+import Dashboard from './components/Dashboard';
 
 
 class App extends Component  {
@@ -29,7 +29,7 @@ class App extends Component  {
         {this.props.currentUser ? "Logged In ON" : "Logged Off"}
          <Switch>
             <Route exact path="/" component={LOH} />
-            <Route exact path="/home" component={HOME} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} /> 
             <Route path="*" component={NotFound}/>
