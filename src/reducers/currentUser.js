@@ -8,6 +8,10 @@ export default function currentUserReducer(state = null
         case "CLEAR_CURRENT_USER":
             console.log("current user is empty")
             return null ;
+        case "POST_USER_ERRORS":
+          return action.payload
+          case "POST_USER_FAILURE":
+          return action.payload
         default:
           return state;
       }

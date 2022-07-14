@@ -1,16 +1,7 @@
 import { Component } from "react";
 import Table from 'react-bootstrap/Table';
+// import { Link } from 'react-router-dom'
 
-
-const colors = ["table-danger", "#table-warning", "#table-success"]
-
-// export function renderColor(priority){
-//   const levels = ["High", "Medium", "Low"]
-//   return {
-//     level:(levels[priority-1]),
-//     color: colors[priority-1] 
-//   }
-// }
 
 
 export function renderColor(priority){
@@ -24,22 +15,21 @@ export function renderColor(priority){
     color =  "table-success"
   }
   return color;
-  
 }
 
 
 class BugTable extends Component{
     render(){
         return (
-        <tbody >
-            <tr class={renderColor(this.props.bug.attributes.priority)}>
+        <tbody onClick={() => this.props.handleClick(this.props.bug)} >
+            <tr className={renderColor(this.props.bug.attributes.priority)}>
               <td>{this.props.bug.id}</td>
               <td>{this.props.bug.attributes.description}</td>
               <td>John Kyeremeh</td>
               <td>{this.props.bug.attributes.status}</td>
               <td>{this.props.bug.attributes.priority}</td>
               <td>CREATED DATE</td>
-              <td>CREATED DATE</td>
+              {/* <td><Link to={`/`}>Learn more</Link></td> */}
             </tr>
           </tbody>)}
 }

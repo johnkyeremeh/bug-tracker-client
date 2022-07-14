@@ -37,7 +37,7 @@ function Navigation(props) {
           <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
           {props.currentUser.type === "user" ? <Nav.Link  className="linkText" href="./login">ADMIN VIEW!!!</Nav.Link> : "Not ADMIN"}
           <Nav.Link  className="linkText" href="./projects">Current Projects</Nav.Link>
-          <Nav.Link  className="linkText" href="./home">Current Bugs</Nav.Link> 
+          <Nav.Link  className="linkText" href="./dashboard">Current Bugs</Nav.Link> 
          <Nav.Link  className="linkText" href="./login">My Bugs</Nav.Link> 
 
         </span> 

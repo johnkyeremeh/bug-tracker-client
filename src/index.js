@@ -13,16 +13,19 @@ import currentUserReducer from './reducers/currentUser';
 import LoginFormReducer from './reducers/loginForm';
 import myBugs from './reducers/myBugs';
 import LoggedIn from './reducers/auth';
+import DisplayedBug from './reducers/displayedBug';
+import bugFormReducer from './reducers/bugFormData';
 
 // import reportWebVitals from './reportWebVitals';
 
 
 const rootReducer = combineReducers({
-  users: usersReducer,
   currentUser: currentUserReducer,
   loginForm: LoginFormReducer,
   myBugs: myBugs,
-  loggedIn: LoggedIn
+  loggedIn: LoggedIn,
+  currentViewedBug: DisplayedBug,
+  bugFormData: bugFormReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

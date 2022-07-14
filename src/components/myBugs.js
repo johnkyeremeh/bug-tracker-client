@@ -4,25 +4,18 @@ import Table from 'react-bootstrap/Table';
 
 import BugTable from "./BugTable";
 
-import { getMyBugs } from "../actions/myBugs";
-
+// import { getMyBugs } from "../actions/myBugs";
 
 class MyBugsList extends Component{
  
-
- 
-  //  componentDidMount(){
-  //   return dispatch => {
-  //     dispatch(getMyBugs())
-  //   }
-  // }
-
-  myBugsListItems =  this.props.myBugs.map(bug => <BugTable  bug={bug}/>) 
-
-
     render(){
+      let myBugsListItems
 
-  
+      if (this.props.myBugs){
+        myBugsListItems =  this.props.myBugs.map(bug => < BugTable key={bug.id}  bug={bug} handleClick={this.props.handleClick} />)
+        console.log(myBugsListItems)
+      }
+
       return (
         <Table>
           <thead>
@@ -36,7 +29,7 @@ class MyBugsList extends Component{
               <th>Learn</th>
             </tr>
           </thead>
-           {this.myBugsListItems} 
+           {this.props.myBugs.length && myBugsListItems ? this.props.myBugs.length && myBugsListItems  : "You currently don't have any bugs"} 
         </Table>)
     }
 }

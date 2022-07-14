@@ -1,20 +1,13 @@
-//sync 
 
+//update the state with the current state of bugs 
 export const setMyBugs = (bugs) => {
 
     return {
         type: "SET_MY_BUGS",
-        payload: bugs  || null 
+        payload: bugs  
     }
 }
 
-
-export const createBug = (bugs) => {
-    return {
-        type: "CREATE_BUG",
-        payload: bugs
-    }
-}
 
 export const updateBug = (bugs) => {
     return {
@@ -30,13 +23,11 @@ export const markComplete = (bugs) => {
     }
 }
 
-
-
 export const getMyBugs = () => {
 
     console.log("Starting task to get current user data")
-    return async dispatch => {
-        return await fetch("http://localhost:3000/api/v1/bugs", {
+    return dispatch => {
+        return fetch("http://localhost:3000/api/v1/bugs", {
             credentials: "include",
             method: "GET",
             headers: {
@@ -45,7 +36,7 @@ export const getMyBugs = () => {
         })
         .then(res => res.json())
         .then(data => {
-       
+            
 
             console.log("fetched current user data", data)
             if (data !== undefined) {
