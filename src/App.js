@@ -11,7 +11,9 @@ import { getCurrentUser } from './actions/currentUser';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
+
 import Dashboard from './components/Dashboard';
+import BugForm from './components/BugForm';
 
 
 class App extends Component  {
@@ -28,6 +30,7 @@ class App extends Component  {
       <Router>
         {this.props.currentUser ? "Logged In ON" : "Logged Off"}
          <Switch>
+            <Route exact path="/bugs/new" component={BugForm} />
             <Route exact path="/" component={LOH} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/signup" component={Signup} />
