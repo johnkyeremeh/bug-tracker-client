@@ -24,10 +24,10 @@ export const login = credentials => {
 
     console.log("crediantials are:", credentials)
     
-    return dispatch => {
+    return async dispatch => {
         
 
-        return fetch("http://localhost:3000/api/v1/login", {
+        return await fetch("http://localhost:3000/api/v1/login", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -43,13 +43,12 @@ export const login = credentials => {
 
     
             if (data !== undefined) {
-                // localStorage.setItem("token", data.jwt)
                 // alert("Successfully Signed Up")
                 dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
                
-                //  dispatch(getMyBugs())
+                 dispatch(getMyBugs())
             
             } else {
                 alert(data.errors.map(error => error))
@@ -69,8 +68,8 @@ export const getCurrentUser = (token) => {
 
 
     console.log("DISPATCHING GET CURRENT USER")
-    return dispatch => {
-        return fetch("http://localhost:3000/api/v1/auto_login", {
+    return async dispatch => {
+        return await fetch("http://localhost:3000/api/v1/get_current_user", {
             credentials: "include",
             method: "GET",
             headers: {
@@ -88,7 +87,7 @@ export const getCurrentUser = (token) => {
                 dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
-                //  dispatch(getMyBugs())
+                 dispatch(getMyBugs())
             } else {
                 alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })

@@ -1,44 +1,42 @@
 //sync 
 
 export const setMyBugs = (bugs) => {
+
     return {
         type: "SET_MY_BUGS",
-        payload: bugs
+        payload: bugs  || null 
     }
 }
 
 
 export const createBug = (bugs) => {
     return {
-        type: "SET_MY_BUGS",
+        type: "CREATE_BUG",
         payload: bugs
     }
 }
 
 export const updateBug = (bugs) => {
     return {
-        type: "SET_MY_BUGS",
+        type: "UPDATE_BUG",
         payload: bugs
     }
 }
 
 export const markComplete = (bugs) => {
     return {
-        type: "SET_MY_BUGS",
+        type: "MARK_BUG",
         payload: bugs
     }
 }
 
 
 
-
-
-
 export const getMyBugs = () => {
 
     console.log("Starting task to get current user data")
-    return dispatch => {
-        return fetch("http://localhost:3000/api/v1/bugs", {
+    return async dispatch => {
+        return await fetch("http://localhost:3000/api/v1/bugs", {
             credentials: "include",
             method: "GET",
             headers: {
@@ -51,6 +49,7 @@ export const getMyBugs = () => {
 
             console.log("fetched current user data", data)
             if (data !== undefined) {
+                
                  dispatch(setMyBugs(data.bugs))
             } else {
                 alert(data.errors.map(error => error))

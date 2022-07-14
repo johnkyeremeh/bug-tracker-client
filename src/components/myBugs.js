@@ -3,21 +3,22 @@ import {Component} from "react"
 import Table from 'react-bootstrap/Table';
 
 import BugTable from "./BugTable";
+
 import { getMyBugs } from "../actions/myBugs";
-
-
 
 
 class MyBugsList extends Component{
  
 
-   myBugsListItems = this.props.length > 0 ? this.props.myBugs.map(bug => <BugTable key={bug.id}  bug={bug}/>) : null 
-
+ 
   //  componentDidMount(){
   //   return dispatch => {
   //     dispatch(getMyBugs())
   //   }
   // }
+
+  myBugsListItems =  this.props.myBugs.map(bug => <BugTable  bug={bug}/>) 
+
 
     render(){
 
@@ -35,7 +36,7 @@ class MyBugsList extends Component{
               <th>Learn</th>
             </tr>
           </thead>
-          {/* {this.myBugsListItems} */}
+           {this.myBugsListItems} 
         </Table>)
     }
 }

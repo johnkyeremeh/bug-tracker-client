@@ -15,7 +15,7 @@ class BugsContainer extends Component{
 
 const mapStateToProps = (state) => {
     return {
-      myBugs: state.myBugs
+      myBugs: state.myBugs.data
     }
   }
   export default connect(mapStateToProps)(BugsContainer)
