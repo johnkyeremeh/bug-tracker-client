@@ -9,21 +9,19 @@ import {connect} from "react-redux"
 import { getCurrentUser } from './actions/currentUser';
 
 
-
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
-
 import Dashboard from './components/Dashboard';
 import BugForm from './components/BugForm';
+import BugView from './components/BugView';
+import BugEdit from './components/BugEdit';
 
 const history = createBrowserHistory();
 
 
 class App extends Component  {
 
-
-  // for test
   componentDidMount(){
       this.props.getCurrentUser()
   }
@@ -35,10 +33,13 @@ class App extends Component  {
       {this.props.currentUser ? "Logged In ON" : "Logged Off"}
        <Switch>
           <Route exact path="/bugs/new" component={BugForm} />
+          <Route exact path="/bugs/:id" component={BugView} />
+          <Route exact path="/bugs/:id/edit" component={BugEdit} />
+
           <Route exact path="/" component={LOH} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} /> 
+          <Route exact path="/login" component={Login} />          
           <Route path="*" component={NotFound}/>
        </Switch>
     </Router>
