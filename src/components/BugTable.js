@@ -1,11 +1,10 @@
 import { Component } from "react";
-import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom'
 
 
 
+//add style depending on the priority value 
 export function renderColor(priority){
-
   let color
   if (priority === "High"){
     color = "table-danger"
@@ -29,7 +28,7 @@ class BugTable extends Component{
               <td>{this.props.bug.attributes.status}</td>
               <td>{this.props.bug.attributes.priority}</td>
               <td>CREATED DATE</td>
-              {/* <td><Link to={`/bugs/${this.props.bug.id}`}>Learn More</Link></td> */}
+              <td><Link to={`/bugs/${this.props.bug.id}`}>Learn More</Link></td>
             </tr>
           </tbody>)}
 }
