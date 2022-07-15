@@ -16,6 +16,7 @@ import myBugs from './reducers/myBugs';
 import LoggedIn from './reducers/auth';
 import DisplayedBug from './reducers/displayedBug';
 import bugFormReducer from './reducers/bugFormData';
+import bugReducer from './reducers/bugReducer';
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
   myBugs: myBugs,
   loggedIn: LoggedIn,
   currentViewedBug: DisplayedBug,
-  bugFormData: bugFormReducer
+  bugFormData: bugFormReducer,
+  bug: bugReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
