@@ -24,10 +24,10 @@ export const login = credentials => {
 
     console.log("crediantials are:", credentials)
     
-    return async dispatch => {
+    return  dispatch => {
         
 
-        return await fetch("http://localhost:3000/api/v1/login", {
+        return  fetch("http://localhost:3000/api/v1/login", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -51,12 +51,12 @@ export const login = credentials => {
                  dispatch(getMyBugs())
             
             } else {
-                alert(data.errors.map(error => error))
+                // alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
             }
         })
         .catch(err => {
-            alert("Invalid Credentials: Unable to Sign In At This Time")
+            // alert("Invalid Credentials: Unable to Sign In At This Time")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }
@@ -68,8 +68,8 @@ export const getCurrentUser = (token) => {
 
 
     console.log("DISPATCHING GET CURRENT USER")
-    return async dispatch => {
-        return await fetch("http://localhost:3000/api/v1/get_current_user", {
+    return  dispatch => {
+        return  fetch("http://localhost:3000/api/v1/get_current_user", {
             credentials: "include",
             method: "GET",
             headers: {
@@ -89,12 +89,12 @@ export const getCurrentUser = (token) => {
                  dispatch(clearLoginForm())
                  dispatch(getMyBugs())
             } else {
-                alert(data.errors.map(error => error))
+                // alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
             }
         })
         .catch(err => {
-            alert("Invalid Credentials: Unable to Sign In At This Time")
+            // alert("Invalid Credentials: Unable to Sign In At This Time")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }

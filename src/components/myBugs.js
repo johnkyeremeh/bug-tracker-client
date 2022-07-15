@@ -17,6 +17,7 @@ class MyBugsList extends Component{
       }
 
       return (
+        <>
         <Table>
           <thead>
             <tr>
@@ -29,8 +30,9 @@ class MyBugsList extends Component{
               <th>Learn</th>
             </tr>
           </thead>
-           {this.props.myBugs.length && myBugsListItems ? this.props.myBugs.length && myBugsListItems  : "You currently don't have any bugs"} 
-        </Table>)
+           {this.props.myBugs.length && myBugsListItems} 
+        </Table>
+        </>)
     }
 }
 

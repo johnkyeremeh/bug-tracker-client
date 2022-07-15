@@ -6,23 +6,19 @@ import BugView from "../components/BugView";
 import Button from 'react-bootstrap/Button';
 
 
-  
-
 class BugsContainer extends Component{
+    
   
-
     handleClick = (bug) => {
         console.log("bug item clicked", bug)
         this.props.setDisplayedBug(bug)
     }
 
-
     render(){
-        console.log(this.props.currentViewedBug)
         return(
             <div>
                 <div className="text-center">
-                    <Button href="/bugs/crate" className="float-right"  bsSize="small">New Ticket</Button>
+                    <Button href="/bugs/new" className="float-right">New Ticket</Button>
                 </div>
                  < MyBugsList myBugs={this.props.myBugs} handleClick={this.handleClick} />
                 {this.props.currentViewedBug.isDisplayed ? <BugView bug={this.props.currentViewedBug.bug}/> : "No Bug View"}

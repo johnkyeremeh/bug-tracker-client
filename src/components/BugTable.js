@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Table from 'react-bootstrap/Table';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -29,7 +29,7 @@ class BugTable extends Component{
               <td>{this.props.bug.attributes.status}</td>
               <td>{this.props.bug.attributes.priority}</td>
               <td>CREATED DATE</td>
-              {/* <td><Link to={`/`}>Learn more</Link></td> */}
+              {/* <td><Link to={`/bugs/${this.props.bug.id}`}>Learn More</Link></td> */}
             </tr>
           </tbody>)}
 }
