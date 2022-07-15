@@ -1,7 +1,7 @@
 import {Component} from "react"
 import BugsContainer from "../containers/BugsContainer";
 import NavigationContainer from "../containers/NavigationContainer";
-import { getMyBugs, setMyBugs } from "../actions/myBugs";
+import { getMyBugs} from "../actions/myBugs";
 import { connect } from "react-redux";
 
 
@@ -28,4 +28,4 @@ const mapStatetoProps = (state) => {
   }
 }
 
-export default connect(mapStatetoProps, {getMyBugs, setMyBugs})(Dashboard)
+export default connect(mapStatetoProps, {getMyBugs})(Dashboard)
