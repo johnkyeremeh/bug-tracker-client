@@ -4,6 +4,7 @@ export const RECEIVE_BUGS =  `GET_BUGS`;
 export const RECEIVE_BUG = 'GET_BUG';
 export const ADD_BUG =  `ADD_BUG`;
 export const UPDATE_BUG = 'UPDATE_BUG';
+export const REPLACE_BUG = 'REPLACE_BUG';
 export const REMOVE_BUG = 'REMOVE_BUG';
 export const MARK_BUG = 'MARK_BUG';
 
@@ -43,6 +44,13 @@ export const updateBug = (bug) => {
         type: UPDATE_BUG,
         payload: bug
     }
+}
+
+export const replaceBug = (bug) => {
+  return {
+      type: REPLACE_BUG,
+      payload: bug
+  }
 }
 
 export const markComplete = (bug) => {
@@ -151,4 +159,41 @@ export const createBug = (BugFormData) => {
 }
 
 
+export const postUpdateBug = (bug) => {
+  const id = bug.id 
+  debugger
+  const sendableBugData = {
+    title: bug.title,
+    description: bug.description,
+    status: bug.status,
+  }
+
+  console.log("Updating bug", id )
+  return (dispatch) => {
+      return fetch(`http://localhost:3000/api/v1/bugs/${id}`, {
+          credentials: "include",
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json",
+          },
+        body: JSON.stringify(sendableBugData)
+      })
+      .then(res => res.json())
+      .then(data => {
+          debugger
+          console.log("was able to fetch the current user. Here's the data:", data)
+          if (data !== undefined) {
+               dispatch(updateBug(data))
+               dispatch(replaceBug(data))
+          } else {
+              // alert(data.errors.map(error => error))
+              // return dispatch({ type: POST_USER_ERRORS, payload: data })
+          }
+      })
+      .catch(err => {
+          // alert("Invalid Credentials: Unable to fetch user bug data")
+          // return dispatch({ type: POST_USER_FAILURE, payload: err })
+      })
+  }
+}
 
