@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Router, Switch, Route} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 
 import {Component} from 'react'
@@ -17,7 +17,7 @@ import BugForm from './components/BugForm';
 import BugView from './components/BugView';
 import BugEdit from './components/BugEdit';
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 
 
 class App extends Component  {
