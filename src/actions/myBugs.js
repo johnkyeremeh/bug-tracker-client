@@ -247,12 +247,6 @@ export const postUpdateBug = (bug) => {
 
 export const deleteBug = (id) => {
   
-  // const id = bug.id 
-  // const sendableBugData = {
-  //   title: bug.title,
-  //   description: bug.description,
-  //   status: bug.status,
-  // }
 
   console.log("Deleting bug", id )
   return (dispatch) => {
