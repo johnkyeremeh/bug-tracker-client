@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {connect} from 'react-redux';
 import NavigationContainer from "../containers/NavigationContainer";
-import { userSignup } from "../actions/user";
 
 
 
@@ -40,42 +39,37 @@ import { userSignup } from "../actions/user";
     render(){
         return(
             <div>
-                 <NavigationContainer />
-                 <Form onSubmit={this.handleSubmit}>
-                 <Form.Group className="mb-3" controlId="formBasicUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control type="text" placeholder="Enter username" value={this.state.username} name="username"  onChange={this.handleChange}/>
-                </Form.Group>
+                <NavigationContainer />
+                 <div className="Auth-form-container">
+                        <Form onSubmit={this.handleSubmit} className="Auth-form">
+                        <h3 className="Auth-form-title">Sign Up</h3>
+                            <div className="Auth-form-content">
+                                <Form.Group className="mb-3 form-group"  controlId="formBasicUsername">
+                                    <Form.Label>Username</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter username" value={this.state.username} name="username"  onChange={this.handleChange}/>
+                                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" value={this.state.email} name="email"  onChange={this.handleChange}/>
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+                                <Form.Group className="mb-3 form-group" controlId="formBasicEmail">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter email" value={this.state.email} name="email"  onChange={this.handleChange}/>
+                                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" value={this.state.password}  name="password" onChange={this.handleChange} />
-                </Form.Group>
-
-                {/* <Form.Group className="mb-3" controlId="formConfirmPassword">
-                    <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" value={this.state.confirmPassword} name="confirmPassword" onChange={this.handleChange}/>
-                </Form.Group> */}
-
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                <br></br>
-                <br></br>
-            </Form>
-            {/* <p>Or SignUp with Google</p> */}
+                                <Form.Group className="mb-3 form-group" controlId="formBasicPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Password" value={this.state.password}  name="password" onChange={this.handleChange} />
+                                </Form.Group>
+                                
+                                <Button variant="primary" type="submit">Submit</Button>
+                            </div>
+                        </Form>
+                </div>
             </div>  
         );
     }
 }
 
 
-export default connect(null, {userSignup})(Signup)
+
+
+
+export default connect(null)(Signup)
