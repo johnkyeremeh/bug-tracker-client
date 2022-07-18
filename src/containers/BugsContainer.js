@@ -22,7 +22,7 @@ class BugsContainer extends Component{
                 <div className="text-center">
                     <Button href="/bugs/new" className="float-right">New Ticket</Button>
                 </div>
-                 < MyBugsList myBugs={this.props.myBugs} handleClick={this.handleClick} />
+                {< MyBugsList myBugs={this.props.myBugs} handleClick={this.handleClick} />}
                 {/* {this.props.currentViewedBug.isDisplayed ? <BugView bug={this.props.currentViewedBug.bug}/> : "No Bug View"}
                  "Bug is displayed", {this.props.currentViewedBug.id} :  {this.props.currentViewedBug.isDisplayed.toString()} */}
             </div>    

@@ -5,15 +5,18 @@ import { getMyBugs} from "../actions/myBugs";
 import { connect } from "react-redux";
 
 
-class Dashboard extends Component{
+class myBugsView extends Component{
 
- 
+  componentDidMount() {
+    this.props.getMyBugs()  
+  }
+  
 
     render(){
         return(
           <div>
                 < NavigationContainer />
-              
+                < BugsContainer  />
           </div>
         );
       }
@@ -25,4 +28,4 @@ const mapStatetoProps = (state) => {
   }
 }
 
-export default connect(mapStatetoProps, {getMyBugs})(Dashboard)
+export default connect(mapStatetoProps, {getMyBugs})(myBugsView)

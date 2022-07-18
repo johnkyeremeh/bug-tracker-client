@@ -13,8 +13,7 @@ class MyBugsList extends Component{
 
       if (this.props.myBugs){
         myBugsListItems =  this.props.myBugs.map(bug => < BugTable key={bug.id}  bug={bug} handleClick={this.props.handleClick} />)
-        console.log(myBugsListItems)
-      }
+      } 
 
       return (
         <>
@@ -31,7 +30,7 @@ class MyBugsList extends Component{
               <th>More Info</th>
             </tr>
           </thead>
-           {this.props.myBugs.length && myBugsListItems} 
+           {this.props.myBugs && myBugsListItems} 
         </Table>
         
         </>)

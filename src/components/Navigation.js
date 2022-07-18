@@ -34,11 +34,12 @@ function Navigation(props) {
         <Navbar.Brand href="/">BugTracker App</Navbar.Brand>
         {props.currentUser ? 
         <span className="Nav-linkText" >
-          <Nav.Link  className="linkText" href="./login">Project Information</Nav.Link>
-          {props.currentUser.type === "user" ? <Nav.Link  className="linkText" href="./login">ADMIN VIEW!!!</Nav.Link> : "Not ADMIN"}
+          <Nav.Link  className="linkText" href="#">Project Information</Nav.Link>
+          <Nav.Link  className="linkText" href="/dashboard">Dashboard</Nav.Link>
+          {/* {props.currentUser.type === "user" ? <Nav.Link  className="linkText" href="./login">ADMIN VIEW!!!</Nav.Link> : "Not ADMIN"} */}
           <Nav.Link  className="linkText" href="./projects">Current Projects</Nav.Link>
           <Nav.Link  className="linkText" href="./dashboard">Current Bugs</Nav.Link> 
-         <Nav.Link  className="linkText" href="./login">My Bugs</Nav.Link> 
+         <Nav.Link  className="linkText" href="./mybugs">My Bugs</Nav.Link> 
 
         </span> 
          : ""}
