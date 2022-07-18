@@ -51,7 +51,7 @@ export const login = credentials => {
                  dispatch(clearLoginForm())
                
                  dispatch(getMyBugs())
-                 history.push("/dashboard")
+                 history.push("/myBugs")
             
             } else {
                 alert(data.errors.map(error => error))
@@ -67,7 +67,7 @@ export const login = credentials => {
 
 
 
-export const getCurrentUser = (token) => {
+export const getCurrentUser = () => {
 
 
     console.log("DISPATCHING GET CURRENT USER")
@@ -85,19 +85,17 @@ export const getCurrentUser = (token) => {
             console.log("getting the current user", data)
             if (data !== undefined) {
                 console.log("User data we are fetching", data)
-                // localStorage.setItem("token", data.jwt)
-                // alert("Successfully logged in")
                 dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
                  dispatch(getMyBugs())
             } else {
-                // alert(data.errors.map(error => error))
+                alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
             }
         })
         .catch(err => {
-            // alert("Invalid Credentials: Unable to Sign In At This Time")
+            alert("Invalid Credentials: Unable to Sign In At This Time")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }

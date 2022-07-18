@@ -165,7 +165,7 @@ export const createBug = (BugFormData) => {
         }
       })
       .then(() => {
-        history.push("/dashboard")
+        history.push("/myBugs")
       })
       .catch(console.log)
     }
@@ -235,7 +235,7 @@ export const postUpdateBug = (bug) => {
           }
       })
       .then(() => {
-        history.push("/dashboard")
+        history.push("/myBugs")
       })
       .catch(err => {
           // alert("Invalid Credentials: Unable to fetch user bug data")
@@ -262,7 +262,7 @@ export const deleteBug = (id) => {
         dispatch(removeBug(id))
       })
       .then(() => {
-        history.push("/dashboard")
+        history.push("/myBugs")
       })
       .catch(err => {
         debugger

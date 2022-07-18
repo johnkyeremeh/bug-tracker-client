@@ -38,10 +38,13 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" placeholder="Password" value={loginFormData.password}  name="password" onChange={handleChange} />
                                 </Form.Group>
-                                
+                                <Form.Text id="passwordHelpBlock" muted>
+                                    <p>Create an account?<a href="/signup">Sign Up</a></p>
+                                </Form.Text>
                                 <Button variant="primary" type="submit">Submit</Button>
                             </div>
                         </Form>
+
                 </div>
             </div>  
         )

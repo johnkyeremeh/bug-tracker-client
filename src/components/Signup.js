@@ -58,6 +58,9 @@ import NavigationContainer from "../containers/NavigationContainer";
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" placeholder="Password" value={this.state.password}  name="password" onChange={this.handleChange} />
                                 </Form.Group>
+                                <Form.Text id="passwordHelpBlock" muted>
+                                    <p>Already havean account?<a href="/login">Login</a></p>
+                                </Form.Text>
                                 
                                 <Button variant="primary" type="submit">Submit</Button>
                             </div>
