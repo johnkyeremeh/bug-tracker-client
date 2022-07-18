@@ -16,6 +16,7 @@ import Dashboard from './components/Dashboard';
 import BugForm from './components/BugForm';
 import BugView from './components/BugView';
 import BugEdit from './components/BugEdit';
+import myBugsView from './components/myBugsView';
 
 export const history = createBrowserHistory();
 
@@ -32,6 +33,7 @@ class App extends Component  {
       <Router history={history}>
       {this.props.currentUser ? "Logged In ON" : "Logged Off"}
        <Switch>
+          <Route exact path="/mybugs" component={myBugsView} />
           <Route exact path="/bugs/new" component={BugForm} />
           <Route exact path="/bugs/:id" component={BugView} />
           <Route exact path="/bugs/:id/edit" component={BugEdit} />
