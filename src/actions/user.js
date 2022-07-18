@@ -1,41 +1,45 @@
-// // import axios from 'axios';
+import { setLoggedIn } from "./auth";
+import { setCurrentUser } from "./currentUser";
+import { history } from "../App";
 
-// const CREATE_USER = 'CREATE_USER';
-// const CREATE_USER_SUCCESS= 'CREATE_USER';
-// const CREATE_USER_ERRORS = 'POST_USER_ERRORS';
-// const CREATE_USER_FAILURE = 'CREATE_USER_FAILURE'
+const CREATE_USER = 'CREATE_USER';
 
-// export const signedUpUser = ({username, email, password}) => (dispatch) => {
-//     console.log(username)
+export  const userSignup = credentials => {
+ 
+    console.log("crediantials are:", credentials)
+    
+    debugger
+    return  dispatch => {
+        
+        return fetch("http://localhost:3000/api/v1/signup", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(credentials)
+        })
+        .then(res => res.json())
+        .then(data => {
+            debugger
+        console.log("login data: ", data)
 
-//     fetch("http://localhost:3000/users", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//         body: JSON.stringify({
-//             username,
-//             email,
-//             password
-//         })
-//     })
-//     .then(res => res.json())
-//     .then(data => {
-//         if (data.user !== undefined) {
-//             localStorage.setItem("token", data.jwt)
-//             alert("Successfully Signed Up")
-//             return dispatch({ type: POST_USER_SUCCESS, payload: data })
-//         } else {
-//             alert(data.errors.map(error => error))
-//             return dispatch({ type: POST_USER_ERRORS, payload: data })
-//         }
-//     })
-//     .catch(err => {
-//         alert("Unable to SignUp At This Time")
-//         return dispatch({ type: POST_USER_FAILURE, payload: err })
-//     })
-
-
-// }
-
+            if (data !== undefined) {
+                
+                alert("Logging in...")
+                dispatch(setLoggedIn())
+                 dispatch(setCurrentUser(data.user))
+                 history.push("/dashboard")
+            
+            } else {
+                alert(data.errors.map(error => error))
+                // return dispatch({ type: POST_USER_ERRORS, payload: data })
+            }
+        })
+        .catch(err => {
+            alert("Unable to SignUp At This Time")
+            // return dispatch({ type: POST_USER_FAILURE, payload: err })
+        })
+    }
+}
