@@ -1,3 +1,4 @@
+import { history } from "../App";
 
 import { setLoggedIn } from "./auth"
 import { clearLoginForm } from "./loginForm"
@@ -43,20 +44,22 @@ export const login = credentials => {
 
     
             if (data !== undefined) {
-                // alert("Successfully Signed Up")
+                
+                alert("Logging in...")
                 dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
                
                  dispatch(getMyBugs())
+                 history.push("/dashboard")
             
             } else {
-                // alert(data.errors.map(error => error))
+                alert(data.errors.map(error => error))
                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
             }
         })
         .catch(err => {
-            // alert("Invalid Credentials: Unable to Sign In At This Time")
+            alert("Invalid Credentials: Unable to Sign In At This Time")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }
