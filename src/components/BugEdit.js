@@ -9,10 +9,12 @@ import {postUpdateBug, getBug} from '../actions/myBugs';
 
 class BugEdit extends React.Component {
     
-  state = {
-    title: "",
-    description: ""
-  }
+    state = {
+        summary: "",
+        description: "",
+        status: "",
+        priority: "",
+    }
 
   componentDidMount() {                                   
     this.props.getBug(this.props.match.params.id);
@@ -28,11 +30,13 @@ class BugEdit extends React.Component {
   
   handleSubmit = (event) => {
     event.preventDefault()
-    debugger
+
     const id = this.props.bug.id;
-    const title = this.state.title ? this.state.title : this.props.bug.title;
-    const description = this.state.content ? this.state.content : this.props.bug.content;
-    const bug = {id: id, title: title, description: description}
+    const summary = this.state.summary ? this.state.summary : this.props.bug.summary;
+    const description = this.state.description ? this.state.description : this.props.bug.description;
+    const status = this.state.status ? this.state.status : this.props.bug.status;
+    const priority = this.state.priority ? this.state.priority : this.props.bug.priority;
+    const bug = {id: id, summary: summary, description: description, status: status, priority: priority}
     
     this.props.postUpdateBug(bug)
   }
@@ -40,20 +44,37 @@ class BugEdit extends React.Component {
   render(){
     return (
       <Form onSubmit={this.handleSubmit}>
-          ADD NEW BUG
-        <Form.Group className="mb-3" controlId="formBasicEmail"  >
-          <Form.Label>Title</Form.Label>
-          <Form.Control type="text" name="title" placeholder=""  onChange={this.handleChange} value={this.state.title}/>
+          Edit A BUG  BUG
+          <Form.Group className="mb-3" controlId="formBasicSummary"  >
+          <Form.Label>Summary</Form.Label>
+          <Form.Control type="text" name="summary" placeholder=""  onChange={this.handleChange} value={this.state.summary}/>
         </Form.Group>
   
         <Form.Group className="mb-3" controlId="formBasicDescription" >
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea"  name="description" placeholder="" onChange={this.handleChange} value={this.state.description} />
         </Form.Group>
-  
-      <Form.Group className="mb-3" controlId="formBasicStatus" >
+
+          <Form.Group className="mb-3" >
           <Form.Label>Status</Form.Label>
-          <Form.Control as="textarea"  name="status" placeholder=""  onChange={this.handleChange} value={this.state.status} />
+            <Form.Select label="Status" name="status" aria-label="Select the priority" onChange={this.handleChange} value={this.state.status}>
+              <option>Click here to select the status of the ticket</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+          </Form.Select>
+        </Form.Group>
+  
+       
+
+        <Form.Group className="mb-3">
+        <Form.Label>Priority</Form.Label>
+          <Form.Select label="Priority"  name="priority" aria-label="Select the priority" onChange={this.handleChange} value={this.state.priority}>
+            <option>Click here to select the priority of the ticket</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </Form.Select>
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit

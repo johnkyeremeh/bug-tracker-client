@@ -10,7 +10,9 @@ class BugsContainer extends Component{
     
   
     handleClick = (bug) => {
+
         console.log("bug item clicked", bug)
+        debugger
         this.props.setDisplayedBug(bug)
     }
 
@@ -21,8 +23,8 @@ class BugsContainer extends Component{
                     <Button href="/bugs/new" className="float-right">New Ticket</Button>
                 </div>
                  < MyBugsList myBugs={this.props.myBugs} handleClick={this.handleClick} />
-                {this.props.currentViewedBug.isDisplayed ? <BugView bug={this.props.currentViewedBug.bug}/> : "No Bug View"}
-                 "Bug is displayed", {this.props.currentViewedBug.id} :  {this.props.currentViewedBug.isDisplayed.toString()}
+                {/* {this.props.currentViewedBug.isDisplayed ? <BugView bug={this.props.currentViewedBug.bug}/> : "No Bug View"}
+                 "Bug is displayed", {this.props.currentViewedBug.id} :  {this.props.currentViewedBug.isDisplayed.toString()} */}
             </div>    
         )
     }

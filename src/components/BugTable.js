@@ -18,17 +18,21 @@ export function renderColor(priority){
 
 
 class BugTable extends Component{
+
+  
     render(){
+      console.log(this.props)
         return (
-        <tbody onClick={() => this.props.handleClick(this.props.bug)} >
+        <tbody >
             <tr className={renderColor(this.props.bug.attributes.priority)}>
               <td>{this.props.bug.id}</td>
+              <td>{this.props.bug.attributes.summary}</td>
               <td>{this.props.bug.attributes.description}</td>
-              <td>John Kyeremeh</td>
+              <td>{this.props.bug.attributes.user.username}</td>
               <td>{this.props.bug.attributes.status}</td>
               <td>{this.props.bug.attributes.priority}</td>
-              <td>CREATED DATE</td>
-              <td><Link to={`/bugs/${this.props.bug.id}`}>Learn More</Link></td>
+              <td>{this.props.bug.attributes.created_at}</td>
+              <td><Link to={`/bugs/${this.props.bug.id}`}>Edit</Link></td>
             </tr>
           </tbody>)}
 }

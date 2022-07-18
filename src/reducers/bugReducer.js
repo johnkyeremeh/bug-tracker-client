@@ -1,4 +1,4 @@
-import { RECEIVE_BUG, UPDATE_BUG, REPLACE_BUG,  MARK_BUG, REMOVE_BUG } from "../actions/myBugs"
+import { RECEIVE_BUG, UPDATE_BUG} from "../actions/myBugs"
 
 export default function bugReducer(state = {}
     , action) {
@@ -8,23 +8,15 @@ export default function bugReducer(state = {}
         case RECEIVE_BUG:
           return action.payload.bug.data
         case UPDATE_BUG:
-          return action.payload.bug.data
-        case REPLACE_BUG:
             debugger
-            return state.map((bug) => {
-                if (bug.id === action.payload.id) {
-                  return {
-                    ...bug,
-                    title: action.payload.title,
-                    description: action.payload.description,
-
-                  }
-                } else return bug;
-              })
-        case MARK_BUG:
-          return action.payload.bug.data
-        case REMOVE_BUG:
-          return action.payload.bug.data
+          return {
+            id: action.payload.bug.id,
+            summary: action.payload.bug.data.attributes.summary,
+            description: action.payload.bug.data.attributes.description,
+            username: action.payload.bug.data.attributes.user.username,
+            status: action.payload.bug.data.attributes.status,
+            priority: action.payload.bug.data.attributes.priority,
+          }
         default:
             return state;
       }

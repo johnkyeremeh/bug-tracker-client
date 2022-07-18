@@ -10,13 +10,14 @@ import { addBug, createBug} from '../actions/myBugs';
 class BugForm extends React.Component {
     
   state = {
-    title: "",
-    description: ""
+    summary: "",
+    description: "",
+    status: "",
+    priority: "",
   }
 
 
   handleChange = event => {
-    
     this.setState({
         [event.target.name]: event.target.value 
       })
@@ -27,40 +28,45 @@ class BugForm extends React.Component {
     this.props.createBug(this.state)
   }
 
-    // const handleChange = event => {
-    //     const { name, value } = event.target 
-    
-    //     const updatedBugFormInfo = {
-    //         ...bugFormData,
-    //         [name]: value
-    //     }
-    //     updateBugForm(updatedBugFormInfo)
-    // }
-    
-    // const handleSubmit = (event) => {
-    //   event.preventDefault()
-    //     console.log("btn clicked")
-  
-    //     createBug(bugFormData)
-    // }
   render(){
     return (
+
       <Form onSubmit={this.handleSubmit}>
-          ADD NEW BUG
-        <Form.Group className="mb-3" controlId="formBasicEmail"  >
-          <Form.Label>Title</Form.Label>
-          <Form.Control type="text" name="title" placeholder=""  onChange={this.handleChange} value={this.state.title}/>
+        <Form.Group className="mb-3" controlId="formBasicSummary"  >
+          <Form.Label>Summary</Form.Label>
+          <Form.Control type="text" name="summary" placeholder=""  onChange={this.handleChange} value={this.state.summary}/>
         </Form.Group>
   
         <Form.Group className="mb-3" controlId="formBasicDescription" >
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea"  name="description" placeholder="" onChange={this.handleChange} value={this.state.description} />
         </Form.Group>
-  
-      <Form.Group className="mb-3" controlId="formBasicStatus" >
+
+          <Form.Group className="mb-3" >
           <Form.Label>Status</Form.Label>
-          <Form.Control as="textarea"  name="status" placeholder=""  onChange={this.handleChange} value={this.state.status} />
+            <Form.Select label="Status" name="status" aria-label="Select the priority" onChange={this.handleChange} value={this.state.status}>
+              <option>Click here to select the status of the ticket</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+          </Form.Select>
         </Form.Group>
+  
+       
+
+        <Form.Group className="mb-3">
+        <Form.Label>Priority</Form.Label>
+          <Form.Select label="Priority"  name="priority" aria-label="Select the priority" onChange={this.handleChange} value={this.state.priority}>
+            <option>Click here to select the priority of the ticket</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </Form.Select>
+        </Form.Group>
+        
+
+
+
         <Button variant="primary" type="submit">
           Submit
         </Button>

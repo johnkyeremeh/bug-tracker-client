@@ -1,11 +1,9 @@
 import { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Navigation from "./Navigation";
-import {connect} from 'react-redux'
-
-import signedUpUser from "../actions/user"
-
+import {connect} from 'react-redux';
+import NavigationContainer from "../containers/NavigationContainer";
+import { userSignup } from "../actions/user";
 
 
 
@@ -14,7 +12,6 @@ import signedUpUser from "../actions/user"
         username: "",
         email: "",
         password: "",
-        // confirmPassword: ""
       }
       
     handleChange = (event) => {
@@ -31,7 +28,7 @@ import signedUpUser from "../actions/user"
             password: this.state.password
         }
         console.log("User current signing up:", this.state)
-        this.props.addUser(user)
+        this.props.userSignup(user)
 
         this.setState({
             username: "",
@@ -43,7 +40,7 @@ import signedUpUser from "../actions/user"
     render(){
         return(
             <div>
-                <Navigation />
+                 <NavigationContainer />
                  <Form onSubmit={this.handleSubmit}>
                  <Form.Group className="mb-3" controlId="formBasicUsername">
                     <Form.Label>Username</Form.Label>
@@ -63,10 +60,10 @@ import signedUpUser from "../actions/user"
                     <Form.Control type="password" placeholder="Password" value={this.state.password}  name="password" onChange={this.handleChange} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formConfirmPassword">
+                {/* <Form.Group className="mb-3" controlId="formConfirmPassword">
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" value={this.state.confirmPassword} name="confirmPassword" onChange={this.handleChange}/>
-                </Form.Group>
+                </Form.Group> */}
 
                 <Button variant="primary" type="submit">
                     Submit
@@ -74,19 +71,11 @@ import signedUpUser from "../actions/user"
                 <br></br>
                 <br></br>
             </Form>
-            <p>Or SignUp with Google</p>
+            {/* <p>Or SignUp with Google</p> */}
             </div>  
         );
     }
 }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addUser: (user) => dispatch({type: "CREATE_USER", payload: user}),
-    }
-}
-
-
-
-export default connect(null, mapDispatchToProps)(Signup)
+export default connect(null, {userSignup})(Signup)

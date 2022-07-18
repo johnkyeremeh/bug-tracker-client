@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { updateBug, markComplete, deleteBug, getBug } from "../actions/myBugs";
+import {  deleteBug, getBug } from "../actions/myBugs";
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
     }
 }           
 
-export default connect(mapStateToProps, {getBug} )(BugView); 
+export default connect(mapStateToProps, {getBug, deleteBug} )(BugView); 

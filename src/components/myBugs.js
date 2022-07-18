@@ -23,15 +23,17 @@ class MyBugsList extends Component{
             <tr>
               <th>Bug ID</th>
               <th>Summary</th>
-              <th>Assigned</th>
+              <th>Description</th>
+              <th>Assignee</th>
               <th>Status</th>
               <th>Priority</th>
               <th>Created</th>
-              <th>Learn</th>
+              <th>More Info</th>
             </tr>
           </thead>
            {this.props.myBugs.length && myBugsListItems} 
         </Table>
+        
         </>)
     }
 }

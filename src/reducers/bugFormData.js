@@ -1,7 +1,8 @@
 const initialState = {
-    title: "",
+    summary: "",
     description: "",
-    status: ""
+    status: "",
+    priority: ""
 }
 
 export default function bugFormReducer(state = initialState
