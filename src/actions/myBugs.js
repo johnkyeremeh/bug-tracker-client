@@ -135,13 +135,16 @@ export const createBug = (BugFormData) => {
 
     return (dispatch) => {
 
+      debugger
       const sendableBugData = {
         summary: BugFormData.summary,
         description: BugFormData.description,
         status: BugFormData.status,
         priority: BugFormData.priority,
+        project_id: BugFormData.project
       }
  
+      debugger
           console.log("Bug being created", BugFormData)
         return fetch("http://localhost:3000/api/v1/bugs", {
         credentials: "include",
@@ -154,13 +157,13 @@ export const createBug = (BugFormData) => {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        debugger
+        
         if (data.error) {
           alert(data.error)
           console.log(data.error)
         } else {
           dispatch(addBug(data))
-            debugger
+            
           console.log(data)
         }
       })
@@ -203,14 +206,16 @@ export const createBug = (BugFormData) => {
 export const postUpdateBug = (bug) => {
   const id = bug.id 
 
-  debugger
-
+  
+debugger
   const sendableBugData = {
     summary: bug.summary,
     description: bug.description,
     status: bug.status,
     priority: bug.priority,
+    project_id: bug.project_id
   }
+  debugger
 
   console.log("Updating bug", id )
   return (dispatch) => {
@@ -224,13 +229,13 @@ export const postUpdateBug = (bug) => {
       })
       .then(res => res.json())
       .then(data => {
-        debugger
+        
           console.log("was able to fetch the current user. Here's the data:", data)
           if (data !== undefined) {
                dispatch(updateBug(data))
                dispatch(replaceBug(data))
           } else {
-              // alert(data.errors.map(error => error))
+              alert(data.errors.map(error => error))
               // return dispatch({ type: POST_USER_ERRORS, payload: data })
           }
       })
@@ -238,7 +243,7 @@ export const postUpdateBug = (bug) => {
         history.push("/myBugs")
       })
       .catch(err => {
-          // alert("Invalid Credentials: Unable to fetch user bug data")
+          alert("Invalid Credentials: Unable to update user bug data")
           // return dispatch({ type: POST_USER_FAILURE, payload: err })
       })
   }
@@ -265,7 +270,7 @@ export const deleteBug = (id) => {
         history.push("/myBugs")
       })
       .catch(err => {
-        debugger
+        
           alert("Unable to delete the current user")
           // return dispatch({ type: POST_USER_FAILURE, payload: err })
       })
