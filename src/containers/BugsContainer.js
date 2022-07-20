@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { setDisplayedBug, displayBug } from "../actions/cells";
 import BugView from "../components/BugView";
 import Button from 'react-bootstrap/Button';
-
+import React from "react";
 
 class BugsContainer extends Component{
     

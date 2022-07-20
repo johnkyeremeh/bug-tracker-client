@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import {connect} from 'react-redux';
 import NavigationContainer from "../containers/NavigationContainer";
 import { userSignup } from "../actions/user";
-
+import React from "react";
 
  class Signup extends Component{
     state = {

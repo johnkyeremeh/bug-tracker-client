@@ -4,6 +4,8 @@ import { updateLoginForm } from "../actions/loginForm";
 import { login } from "../actions/currentUser";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import React from "react";
+
 
 const Login = ({ loginFormData, updateLoginForm, login}) => {
 

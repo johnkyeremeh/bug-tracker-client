@@ -4,7 +4,7 @@ import NavigationContainer from "../containers/NavigationContainer";
 import { getMyBugs} from "../actions/myBugs";
 import { connect } from "react-redux";
 import DashboardContainer from "../containers/DashboardContainer";
-
+import React from "react";
 
 class Dashboard extends Component{
 

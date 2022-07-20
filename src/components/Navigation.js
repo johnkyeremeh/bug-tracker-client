@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
-
+import React from "react";
 import { clearCurrentUser } from '../actions/currentUser';
 import {connect} from "react-redux"
 
@@ -38,7 +38,7 @@ function Navigation(props) {
           <Nav.Link  className="linkText" href="/dashboard">Dashboard</Nav.Link>
           {/* {props.currentUser.type === "user" ? <Nav.Link  className="linkText" href="./login">ADMIN VIEW!!!</Nav.Link> : "Not ADMIN"} */}
           <Nav.Link  className="linkText" href="./myprojects">Current Projects</Nav.Link>
-          <Nav.Link  className="linkText" href="./dashboard">Current Bugs</Nav.Link> 
+          {/* <Nav.Link  className="linkText" href="./dashboard">Current Bugs</Nav.Link>  */}
          <Nav.Link  className="linkText" href="./mybugs">My Bugs</Nav.Link> 
 
         </span> 

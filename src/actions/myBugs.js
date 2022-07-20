@@ -135,7 +135,7 @@ export const createBug = (BugFormData) => {
 
     return (dispatch) => {
 
-      debugger
+     
       const sendableBugData = {
         summary: BugFormData.summary,
         description: BugFormData.description,
@@ -144,7 +144,7 @@ export const createBug = (BugFormData) => {
         project_id: BugFormData.project
       }
  
-      debugger
+      
           console.log("Bug being created", BugFormData)
         return fetch("http://localhost:3000/api/v1/bugs", {
         credentials: "include",
@@ -168,7 +168,7 @@ export const createBug = (BugFormData) => {
         }
       })
       .then(() => {
-        history.push("/myBugs")
+        history.push("/mybugs")
       })
       .catch(console.log)
     }
@@ -207,7 +207,7 @@ export const postUpdateBug = (bug) => {
   const id = bug.id 
 
   
-debugger
+
   const sendableBugData = {
     summary: bug.summary,
     description: bug.description,
@@ -215,7 +215,7 @@ debugger
     priority: bug.priority,
     project_id: bug.project_id
   }
-  debugger
+  
 
   console.log("Updating bug", id )
   return (dispatch) => {

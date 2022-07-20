@@ -3,7 +3,7 @@ import {  deleteBug, getBug } from "../actions/myBugs";
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 // import Form from 'react-bootstrap/Form';
-
+import React from "react";
 class BugView extends Component{
 
     

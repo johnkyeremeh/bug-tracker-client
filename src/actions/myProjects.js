@@ -51,7 +51,7 @@ export const receiveProject = (project) => {
 }
 
 //action function for add a bug 
-export const addBug = (project) => {
+export const addProject = (project) => {
 
     return {
         type: ADD_PROJECT,
@@ -125,77 +125,79 @@ export const getMyProjects = () => {
 }
 
 
-// export const createBug = (BugFormData) => {
+export const createProject = (ProjectFormData) => {
 
 
 
-//   console.log("Starting task to get create a new bug")
+  console.log("Starting task to get create a new project")
 
-//     return (dispatch) => {
+    return (dispatch) => {
 
-//       const sendableBugData = {
-//         summary: BugFormData.summary,
-//         description: BugFormData.description,
-//         status: BugFormData.status,
-//         priority: BugFormData.priority,
-//       }
+      const sendableProjectData = {
+        title: ProjectFormData.title,
+        description: ProjectFormData.description,
+      }
  
-//           console.log("Bug being created", BugFormData)
-//         return fetch("http://localhost:3000/api/v1/bugs", {
-//         credentials: "include",
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(sendableBugData)
-//       })
-//       .then(res => res.json())
-//       .then(data => {
-//         console.log(data)
+          console.log("Project being created", sendableProjectData)
+        return fetch("http://localhost:3000/api/v1/projects", {
+        credentials: "include",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(sendableProjectData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
         
-//         if (data.error) {
-//           alert(data.error)
-//           console.log(data.error)
-//         } else {
-//           dispatch(addBug(data))
+        if (data.error) {
+          alert(data.error)
+          console.log(data.error)
+        } else {
+          dispatch(addProject(data))
             
-//           console.log(data)
-//         }
-//       })
-//       .then(() => {
-//         history.push("/myBugs")
-//       })
-//       .catch(console.log)
-//     }
-//   }
+          console.log(data)
+        }
+      })
+      .then(() => {
+        history.push("/myprojects")
+      })
+      .catch(console.log)
+    }
+  }
 
-//   export const getBug = (id) => {
-//     console.log("Getting bug with id", id)
-//     return (dispatch) => {
-//         return fetch(`http://localhost:3000/api/v1/bugs/${id}`, {
-//             credentials: "include",
-//             method: "GET",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//         })
-//         .then(res => res.json())
-//         .then(data => {
 
-//             console.log("was able to fetch the current user. Here's the data:", data)
-//             if (data !== undefined) {
-//                  dispatch(receiveBug(data))
-//             } else {
-//                 alert(data.errors.map(error => error))
-//                 // return dispatch({ type: POST_USER_ERRORS, payload: data })
-//             }
-//         })
-//         .catch(err => {
-//             // alert("Invalisd Credentials: Unable to fetch user bug data")
-//             // return dispatch({ type: POST_USER_FAILURE, payload: err })
-//         })
-//     }
-// }
+
+  
+  export const getProject = (id) => {
+    
+    console.log("Getting project with id", id)
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/api/v1/projects/${id}`, {
+            credentials: "include",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(res => res.json())
+        .then(data => {
+          
+            console.log("was able to fetch the current project. Here's the data:", data)
+            if (data !== undefined) {
+                 dispatch(receiveProject(data))
+            } else {
+                alert(data.errors.map(error => error))
+                // return dispatch({ type: POST_USER_ERRORS, payload: data })
+            }
+        })
+        .catch(err => {
+            alert("Invalisd Credentials: Unable to fetch project data")
+            // return dispatch({ type: POST_USER_FAILURE, payload: err })
+        })
+    }
+}
 
 
 // export const postUpdateBug = (bug) => {

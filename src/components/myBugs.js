@@ -1,7 +1,7 @@
 import {Component} from "react"
 
 import Table from 'react-bootstrap/Table';
-
+import React from "react";
 import BugTable from "./BugTable";
 
 // import { getMyBugs } from "../actions/myBugs";

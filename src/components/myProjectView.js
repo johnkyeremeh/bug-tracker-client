@@ -3,7 +3,7 @@ import ProjectsContainer from "../containers/ProjectsContainer";
 import NavigationContainer from "../containers/NavigationContainer";
 import { getMyProjects } from "../actions/myProjects";
 import { connect } from "react-redux";
-
+import React from "react";
 
 class myProjectView extends Component{
 

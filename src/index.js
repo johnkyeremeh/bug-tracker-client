@@ -19,6 +19,7 @@ import bugFormReducer from './reducers/bugFormData';
 import bugReducer from './reducers/bugReducer';
 import myProjectsReducer from './reducers/myProjects';
 import projectsReducer from './reducers/projects';
+import projectReducer from './reducers/projectReducer';
 // import reportWebVitals from './reportWebVitals';
 
 
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   bug: bugReducer,
   myProjects: myProjectsReducer,
   projects: projectsReducer,
+  project: projectReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

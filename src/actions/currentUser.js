@@ -51,7 +51,7 @@ export const login = credentials => {
                  dispatch(clearLoginForm())
                
                  dispatch(getMyBugs())
-                 history.push("/myBugs")
+                 history.push("/myprojects")
             
             } else {
                 alert(data.errors.map(error => error))

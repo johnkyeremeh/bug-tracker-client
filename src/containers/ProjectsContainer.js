@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 // import BugView from "../components/BugView";
 import Button from 'react-bootstrap/Button';
 
-
+import React from "react";
 
 class ProjectsContainer extends Component{
     

@@ -3,7 +3,7 @@ import BugsContainer from "../containers/BugsContainer";
 import NavigationContainer from "../containers/NavigationContainer";
 import { getMyBugs} from "../actions/myBugs";
 import { connect } from "react-redux";
-
+import React from "react";
 
 class myBugsView extends Component{
 

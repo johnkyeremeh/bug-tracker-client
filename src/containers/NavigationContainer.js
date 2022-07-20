@@ -1,7 +1,7 @@
 import {Component} from "react"
 import Navigation from "../components/Navigation"
 import {connect} from "react-redux"
-
+import React from "react";
 
 
 class NavagitationContainer extends Component{
