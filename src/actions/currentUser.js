@@ -95,7 +95,7 @@ export const getCurrentUser = () => {
             }
         })
         .catch(err => {
-            alert("Invalid Credentials: Unable to Sign In At This Time")
+            // alert("Invalid Credentials: Unable to Sign In At This Time")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }
