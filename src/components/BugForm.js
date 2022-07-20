@@ -5,6 +5,7 @@ import {connect} from "react-redux"
 
 import { updateBugForm, clearBugForm } from '../actions/bugForm';
 import { addBug, createBug} from '../actions/myBugs';
+import { getAllProjects } from '../actions/projects';
 
 
 class BugForm extends React.Component {
@@ -14,6 +15,11 @@ class BugForm extends React.Component {
     description: "",
     status: "",
     priority: "",
+    project: "",
+  }
+
+  componentDidMount() {                                   
+    this.props.getAllProjects()
   }
 
 
@@ -26,6 +32,12 @@ class BugForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.createBug(this.state)
+  }
+
+  handleSelect = event => {
+    this.setState({
+        project: event.target.value 
+      })
   }
 
   render(){
@@ -42,6 +54,26 @@ class BugForm extends React.Component {
           <Form.Control as="textarea"  name="description" placeholder="" onChange={this.handleChange} value={this.state.description} />
         </Form.Group>
 
+
+        <Form.Group className="mb-3">
+          <Form.Label>Project</Form.Label>
+          <Form.Control
+              as='select'
+              name="project"
+              value={this.state.project}
+              onChange={(e) => {
+                this.setState({
+                  project: e.target.value
+                } )
+              }}>
+              {this.props.projects.map((project) => 
+                 <option key={project.id} value={project.id}>
+                  {project.attributes.title}
+                </option>
+              )}
+            </Form.Control>
+        </Form.Group>
+
           <Form.Group className="mb-3" >
           <Form.Label>Status</Form.Label>
             <Form.Select label="Status" name="status" aria-label="Select the priority" onChange={this.handleChange} value={this.state.status}>
@@ -51,9 +83,8 @@ class BugForm extends React.Component {
               <option value="Done">Done</option>
           </Form.Select>
         </Form.Group>
-  
-       
 
+  
         <Form.Group className="mb-3">
         <Form.Label>Priority</Form.Label>
           <Form.Select label="Priority"  name="priority" aria-label="Select the priority" onChange={this.handleChange} value={this.state.priority}>
@@ -80,8 +111,9 @@ class BugForm extends React.Component {
 
 const mapStatetoProps = (state) => {
    return {
-    bugFormData: state.bugFormData
+    projects: state.projects
+    // bugFormData: state.bugFormData
    }
 }
 
-export default connect(mapStatetoProps, {addBug, updateBugForm, createBug, clearBugForm})(BugForm);
+export default connect(mapStatetoProps, {addBug, updateBugForm, createBug, clearBugForm, getAllProjects})(BugForm);
