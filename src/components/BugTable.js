@@ -28,6 +28,7 @@ class BugTable extends Component{
               <td>{this.props.bug.id}</td>
               <td>{this.props.bug.attributes.summary}</td>
               <td>{this.props.bug.attributes.description}</td>
+              <td>{this.props.bug.attributes.project.title}</td>
               <td>{this.props.bug.attributes.user.username}</td>
               <td>{this.props.bug.attributes.status}</td>
               <td>{this.props.bug.attributes.priority}</td>
