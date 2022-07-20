@@ -9,7 +9,7 @@ import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
-import usersReducer from './reducers/usersReducer';
+// import usersReducer from './reducers/usersReducer';
 import currentUserReducer from './reducers/currentUser';
 import LoginFormReducer from './reducers/loginForm';
 import myBugs from './reducers/myBugs';
@@ -17,7 +17,8 @@ import LoggedIn from './reducers/auth';
 import DisplayedBug from './reducers/displayedBug';
 import bugFormReducer from './reducers/bugFormData';
 import bugReducer from './reducers/bugReducer';
-
+import myProjectsReducer from './reducers/myProjects';
+import projectsReducer from './reducers/projects';
 // import reportWebVitals from './reportWebVitals';
 
 
@@ -28,7 +29,9 @@ const rootReducer = combineReducers({
   loggedIn: LoggedIn,
   currentViewedBug: DisplayedBug,
   bugFormData: bugFormReducer,
-  bug: bugReducer
+  bug: bugReducer,
+  myProjects: myProjectsReducer,
+  projects: projectsReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
