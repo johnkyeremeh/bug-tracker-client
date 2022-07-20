@@ -5,29 +5,41 @@ import {connect} from "react-redux"
 
 import { updateBugForm, clearBugForm } from '../actions/bugForm';
 import {postUpdateBug, getBug} from '../actions/myBugs';
+import { getAllProjects } from '../actions/projects';
+
 
 
 class BugEdit extends React.Component {
-    
-    state = {
+  constructor(){
+    super()
+    this.state = {
         summary: "",
         description: "",
         status: "",
         priority: "",
+        project: "",
     }
+  }
 
   componentDidMount() {                                   
     this.props.getBug(this.props.match.params.id);
+    this.props.getAllProjects()
 }
 
 
   handleChange = event => {
-    
     this.setState({
         [event.target.name]: event.target.value 
       })
   }
   
+
+  handleSelect = event => {
+    this.setState({
+        project: event.target.value 
+      })
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
 
@@ -36,15 +48,19 @@ class BugEdit extends React.Component {
     const description = this.state.description ? this.state.description : this.props.bug.description;
     const status = this.state.status ? this.state.status : this.props.bug.status;
     const priority = this.state.priority ? this.state.priority : this.props.bug.priority;
-    const bug = {id: id, summary: summary, description: description, status: status, priority: priority}
+    const project = this.state.project ? this.state.project : this.props.bug.project;
+    const bug = {id: id, summary: summary, project_id: project, description: description, status: status, priority: priority}
     
     this.props.postUpdateBug(bug)
   }
 
   render(){
+
+    const projectOptions = this.props.projects.map((project) => {return <option key={project.id} value={project.attributes.id}>{project.attributes.title}</option>})
+    console.log(this.props.bug)
     return (
       <Form onSubmit={this.handleSubmit}>
-          Edit A BUG  BUG
+          <h4>Edit the ticket information below</h4>
           <Form.Group className="mb-3" controlId="formBasicSummary"  >
           <Form.Label>Summary</Form.Label>
           <Form.Control type="text" name="summary" placeholder=""  onChange={this.handleChange} value={this.state.summary}/>
@@ -54,6 +70,41 @@ class BugEdit extends React.Component {
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea"  name="description" placeholder="" onChange={this.handleChange} value={this.state.description} />
         </Form.Group>
+
+        
+          <Form.Group className="mb-3">
+          <Form.Label>Project</Form.Label>
+          <Form.Control
+              as='select'
+              name="project"
+              value={this.state.project.id}
+              onChange={(e) => {
+                this.setState({
+                  project: e.target.value
+                } )
+              }}>
+              {this.props.projects.map((project) => 
+                 <option key={project.id} value={project.id}>
+                  {project.attributes.title}
+                </option>
+              )}
+            </Form.Control>
+        </Form.Group>
+
+        {/* <Form.Group className="mb-3">
+          <Form.Label>Project</Form.Label>
+          <Form.Control
+              as='select'
+              value={this.state.priority}
+              onChange={this.handleSelect}>
+              {this.props.projects.map((project) => 
+                 <option key={project.id}>
+                  {project.attributes.title}
+                </option>
+              )}
+            </Form.Control>
+
+        </Form.Group> */}
 
           <Form.Group className="mb-3" >
           <Form.Label>Status</Form.Label>
@@ -66,7 +117,6 @@ class BugEdit extends React.Component {
         </Form.Group>
   
        
-
         <Form.Group className="mb-3">
         <Form.Label>Priority</Form.Label>
           <Form.Select label="Priority"  name="priority" aria-label="Select the priority" onChange={this.handleChange} value={this.state.priority}>
@@ -76,6 +126,8 @@ class BugEdit extends React.Component {
             <option value="High">High</option>
           </Form.Select>
         </Form.Group>
+
+        
         <Button variant="primary" type="submit">
           Submit
         </Button>
@@ -89,9 +141,10 @@ class BugEdit extends React.Component {
 
 const mapStatetoProps = (state) => {
    return {
-    bugFormData: state.bugFormData,
-    bug: state.bug
+    // bugFormData: state.bugFormData,
+    bug: state.bug,
+    projects: state.projects
    }
 }
 
-export default connect(mapStatetoProps, { postUpdateBug, updateBugForm, clearBugForm, getBug})(BugEdit);
+export default connect(mapStatetoProps, { postUpdateBug, updateBugForm, clearBugForm, getBug, getAllProjects})(BugEdit);
