@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {connect} from 'react-redux';
 import NavigationContainer from "../containers/NavigationContainer";
-
+import { userSignup } from "../actions/user";
 
 
  class Signup extends Component{
@@ -75,4 +75,4 @@ import NavigationContainer from "../containers/NavigationContainer";
 
 
 
-export default connect(null)(Signup)
+export default connect(null, {userSignup})(Signup)
