@@ -23,6 +23,7 @@ class MyBugsList extends Component{
               <th>Bug ID</th>
               <th>Summary</th>
               <th>Description</th>
+              <th>Project</th>
               <th>Assignee</th>
               <th>Status</th>
               <th>Priority</th>
