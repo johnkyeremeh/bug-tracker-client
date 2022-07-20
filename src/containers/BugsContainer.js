@@ -12,7 +12,6 @@ class BugsContainer extends Component{
     handleClick = (bug) => {
 
         console.log("bug item clicked", bug)
-        debugger
         this.props.setDisplayedBug(bug)
     }
 
