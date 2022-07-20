@@ -7,7 +7,7 @@ export default function DisplayedBug(state = {
       switch(action.type) {
         
         case "SET_DISPLAY_BUG":
-          debugger
+          
             return {...state,
             id: action.payload.id,
             bug: action.payload,
