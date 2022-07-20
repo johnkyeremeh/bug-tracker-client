@@ -8,7 +8,6 @@ export default function bugReducer(state = {}
         case RECEIVE_BUG:
           return action.payload.bug.data
         case UPDATE_BUG:
-            debugger
           return {
             id: action.payload.bug.id,
             summary: action.payload.bug.data.attributes.summary,
@@ -16,6 +15,7 @@ export default function bugReducer(state = {}
             username: action.payload.bug.data.attributes.user.username,
             status: action.payload.bug.data.attributes.status,
             priority: action.payload.bug.data.attributes.priority,
+            project: action.payload.bug.data.attributes.project,
           }
         default:
             return state;
