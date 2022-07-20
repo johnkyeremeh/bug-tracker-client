@@ -4,11 +4,11 @@ import { history } from "../App";
 
 const CREATE_USER = 'CREATE_USER';
 
-export  const userSignup = credentials => {
+export const userSignup = credentials => {
  
     console.log("crediantials are:", credentials)
     
-    debugger
+    
     return  dispatch => {
         
         return fetch("http://localhost:3000/api/v1/signup", {
@@ -22,7 +22,7 @@ export  const userSignup = credentials => {
         })
         .then(res => res.json())
         .then(data => {
-            debugger
+            
         console.log("login data: ", data)
 
             if (data !== undefined) {
