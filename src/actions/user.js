@@ -30,7 +30,7 @@ export const userSignup = credentials => {
                 alert("Logging in...")
                 dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
-                 history.push("/myBugs")
+                 history.push("/myprojects")
             
             } else {
                 alert(data.errors.map(error => error))

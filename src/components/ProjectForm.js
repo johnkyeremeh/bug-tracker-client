@@ -13,11 +13,14 @@ class ProjectForm extends React.Component {
     description: "",
   }
 
+
+ 
   handleChange = event => {
     this.setState({
         [event.target.name]: event.target.value 
       })
   }
+
   
   handleSubmit = (event) => {
     event.preventDefault()
@@ -37,7 +40,7 @@ class ProjectForm extends React.Component {
         <h3>Create your project</h3>
         <Form.Group className="mb-3" controlId="formBasicSummary"  >
           <Form.Label>title</Form.Label>
-          <Form.Control type="text" name="title" placeholder=""  onChange={this.handleChange} value={this.state.summary}/>
+          <Form.Control type="text" name="title" placeholder=""  onChange={this.handleChange} value={this.state.title}/>
         </Form.Group>
   
         <Form.Group className="mb-3" controlId="formBasicDescription" >

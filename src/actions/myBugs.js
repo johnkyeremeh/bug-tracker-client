@@ -163,7 +163,7 @@ export const createBug = (BugFormData) => {
           console.log(data.error)
         } else {
           dispatch(addBug(data))
-            
+          history.push("/mybugs")
           console.log(data)
         }
       })

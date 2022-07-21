@@ -88,6 +88,10 @@ export const markProjectComplete = (id) => {
     }
 }
 
+///what allows us to return function and have it work with redux
+
+//why do we use thunk
+///
 //action creator function to receive bugs /index
 export const getMyProjects = () => {
 

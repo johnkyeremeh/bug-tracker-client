@@ -94,5 +94,6 @@ label {
 
 .Nav-linkText{
   display: flex;
+  gap: 15px;
 }
 
