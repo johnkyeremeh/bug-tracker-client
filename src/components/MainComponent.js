@@ -16,21 +16,21 @@ class MainComponent extends Component{
             <div className="jumbotron">
             <h1>Bug Tracker Project</h1>
             <p>
-              This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information.  This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information. This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information.
+            This project sets out to create a Bug Tracking application, allowing users to self manage bugs within their own projects.
+            Please find links to documentation and the code behind this project along with my 3 main goals when I started this project:
             </p>
-            <p>
-              <Button variant="primary">Learn more</Button>
-            </p>
+            <ul>
+              <li>Build a Software Requirements Specification and follow it to completion.</li>
+              <li>Plan the work in managable sprints and set deadlines using Notion.</li>
+              <li>Implement MVC architecture & Implement Authentication(Local).</li>
+            </ul>
             <CardGroup>
   <Card>
     <Card.Body>
       <Card.Title>Github Project</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
+       The following link will take you to the Github page
+       where the source code for this project has been well explained and documented.
       </Card.Text>
          <p>
             <Button variant="primary">Learn more</Button>
@@ -44,8 +44,8 @@ class MainComponent extends Component{
     <Card.Body>
       <Card.Title>Project SRS</Card.Title>
       <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
+      For this project I created and followed a software requirements specification for this project,
+      which helped me remain on track and clearly describe the project's goals and scope.
       </Card.Text>
       <p>
             <Button variant="primary">Learn more</Button>
@@ -59,9 +59,7 @@ class MainComponent extends Component{
     <Card.Body>
       <Card.Title>Video Demo</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+        I have a video of the application being used, showcasing its core features for a user.
       </Card.Text>
       <p>
             <Button variant="primary">Learn more</Button>
