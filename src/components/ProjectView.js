@@ -1,28 +1,70 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import NavigationContainer from "../containers/NavigationContainer";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import { getProject } from "../actions/myProjects";
 import { Link } from 'react-router-dom'
-import React from "react";
+
+
+
+import BootstrapTable from 'react-bootstrap-table-next';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+
+
 
 class ProjectView extends Component{
 
     
 
-
-        
+    
     componentDidMount() {                                 
         this.props.getProject(this.props.match.params.id);
+    }
+
+    onTestSelect = (row) => {
+        console.log(row)
+
+        
+        this.props.history.push(`/bugs/${row.id}`)
     }
 
 
     render(){
         
-        const project = this.props.project
+
         
+        
+        const project = this.props.project || []
+
+        const selectRow = {
+            mode: 'radio',
+            clickToSelect: true,
+            onSelect: this.onTestSelect
+          };
+
+        const columns = [{
+            dataField: 'id',
+            text: 'Product ID'
+          }, {
+            dataField: 'summary',
+            text: 'Summary'
+          }, {
+            dataField: 'description',
+            text: 'Description'
+          }, {
+            dataField: 'status',
+            text: 'status',
+            filter: textFilter()
+          }, {
+            dataField: 'priority',
+            text: 'priority',
+            filter: textFilter()
+          }];
+
+        
+         
         return(
             <>
             <NavigationContainer />
@@ -50,6 +92,7 @@ class ProjectView extends Component{
                 
                 </CardGroup>
           </div>
+          {this.props.project.attributes && <BootstrapTable  keyField='id' columns={ columns } data={project.attributes.bugs} pagination={ paginationFactory() } filter={ filterFactory() } selectRow={ selectRow } /> } 
           </>)
     }
 
@@ -61,12 +104,8 @@ class ProjectView extends Component{
 const mapStatetoProps = (state) => {
     return {
      project: state.project
-     // bugFormData: state.bugFormData
     }
  }
-
-
-     
 
 export default connect(mapStatetoProps, {getProject} )(ProjectView); 
 
