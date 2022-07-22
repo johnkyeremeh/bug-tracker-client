@@ -23,10 +23,8 @@ class ProjectView extends Component{
         this.props.getProject(this.props.match.params.id);
     }
 
-    onTestSelect = (row) => {
+    onSelect = (row) => {
         console.log(row)
-
-        
         this.props.history.push(`/bugs/${row.id}`)
     }
 
@@ -41,7 +39,7 @@ class ProjectView extends Component{
         const selectRow = {
             mode: 'radio',
             clickToSelect: true,
-            onSelect: this.onTestSelect
+            onSelect: this.onSelect
           };
 
         const columns = [{
