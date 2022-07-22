@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
+
 import {Router, Switch, Route} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 import React from "react";
