@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Link } from 'react-router-dom'
 import React from "react";
+import Moment from 'react-moment';
 
 
 //add style depending on the priority value 
@@ -32,7 +33,7 @@ class BugTable extends Component{
               <td>{this.props.bug.attributes.user.username}</td>
               <td>{this.props.bug.attributes.status}</td>
               <td>{this.props.bug.attributes.priority}</td>
-              <td>{this.props.bug.attributes.created_at}</td>
+              <td><Moment format="dddd, MMMM Do YYYY">{this.props.bug.attributes.created_at}</Moment></td>
               <td><Link to={`/bugs/${this.props.bug.id}`}>Edit</Link></td>
             </tr>
           </tbody>)}
