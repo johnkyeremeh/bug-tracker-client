@@ -1,8 +1,8 @@
 import { RECEIVE_BUGS, ADD_BUG, POST_BUGS_ERRORS, POST_BUGS_FAILURE, REPLACE_BUG, REMOVE_BUG ,MARK_BUG } from "../actions/myBugs"
 
+
 export default function myBugs(state = []
     , action) {
-
       console.log(action)
       switch(action.type) {
         case RECEIVE_BUGS:
@@ -13,7 +13,7 @@ export default function myBugs(state = []
         case POST_BUGS_ERRORS:
           return action.payload
         case ADD_BUG:
-            return [...state, action.payload]
+            return [...state, action.payload.bug.data]
         case REPLACE_BUG:
           return state.map((bug) => {
               if (bug.id === action.payload.id) {

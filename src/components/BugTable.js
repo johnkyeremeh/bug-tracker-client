@@ -23,6 +23,7 @@ class BugTable extends Component{
   
     render(){
       console.log(this.props)
+      
         return (
         <tbody >
             <tr className={renderColor(this.props.bug.attributes.priority)}>

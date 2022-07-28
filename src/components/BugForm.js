@@ -19,7 +19,11 @@ class BugForm extends React.Component {
   }
 
   componentDidMount() {                                   
-    this.props.getAllProjects()
+    this.props.getAllProjects().then(() => {
+      this.setState({
+        project: this.props.projects[0].id
+      })
+    })
   }
 
 
@@ -59,8 +63,10 @@ class BugForm extends React.Component {
           <Form.Label>Project</Form.Label>
           <Form.Control
               as='select'
+              
               name="project"
               value={this.state.project}
+              defaultValue={this.state.project.id}
               onChange={(e) => {
                 this.setState({
                   project: e.target.value
