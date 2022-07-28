@@ -162,8 +162,8 @@ export const createBug = (BugFormData) => {
           alert(data.error)
           console.log(data.error)
         } else {
-          dispatch(addBug(data))
-          history.push("/mybugs")
+          
+          dispatch(addBug(data.bug))
           console.log(data)
         }
       })
