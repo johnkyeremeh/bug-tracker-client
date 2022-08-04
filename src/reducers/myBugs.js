@@ -3,7 +3,7 @@ import { RECEIVE_BUGS, ADD_BUG, POST_BUGS_ERRORS, POST_BUGS_FAILURE, REPLACE_BUG
 
 export default function myBugs(state = []
     , action) {
-      console.log(action)
+      console.log("myBugs Reducer", action)
       switch(action.type) {
         case RECEIVE_BUGS:
           return action.payload.data
@@ -13,7 +13,7 @@ export default function myBugs(state = []
         case POST_BUGS_ERRORS:
           return action.payload
         case ADD_BUG:
-            return [...state, action.payload.bug.data]
+            return [...state, action.payload.data]
         case REPLACE_BUG:
           return state.map((bug) => {
               if (bug.id === action.payload.id) {

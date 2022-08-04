@@ -106,19 +106,17 @@ export const getMyProjects = () => {
         })
         .then(res => res.json())
         .then(data => {
-          
-            if (data !== undefined) {
-                
+            if (data.errors){
+              console.log("Error occured")
+              alert(data.errors.map(error => error))
+              return dispatch(postProjectsErrors(data))
+            } else if (data !== undefined) {
+        
               console.log("Sucess. Here's the data:", data)
               dispatch(receiveProjects(data.projects))
 
               //future - > if data is undefined display error message 
-            } else {
-            
-              console.log("Error occured")
-                alert(data.errors.map(error => error))
-                return dispatch(postProjectsErrors(data))
-            }
+            } 
         })
         .catch(err => {
           

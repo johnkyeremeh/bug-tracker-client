@@ -2,7 +2,7 @@ import { setLoggedIn } from "./auth";
 import { setCurrentUser } from "./currentUser";
 import { history } from "../App";
 
-const CREATE_USER = 'CREATE_USER';
+// const CREATE_USER = 'CREATE_USER';
 
 export const userSignup = credentials => {
  
@@ -21,24 +21,24 @@ export const userSignup = credentials => {
             body: JSON.stringify(credentials)
         })
         .then(res => res.json())
-        .then(data => {
-            
+        .then(data => { 
         console.log("login data: ", data)
-
-            if (data !== undefined) {
+                
+            if (data.errors){
+                    alert(data.errors.map(error => error))
+                    // return dispatch({ type: POST_USER_ERRORS, payload: data })
+             } else if (data !== undefined) {
                 
                 alert("Logging in...")
                 dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
                  history.push("/myprojects")
-            
-            } else {
-                alert(data.errors.map(error => error))
-                // return dispatch({ type: POST_USER_ERRORS, payload: data })
-            }
+            } 
         })
         .catch(err => {
-            alert("Unable to SignUp At This Time")
+            alert("Unable to Signup At This Time")
+            
+          
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }

@@ -6,6 +6,7 @@ import {connect} from "react-redux"
 import { updateBugForm, clearBugForm } from '../actions/bugForm';
 import { addBug, createBug} from '../actions/myBugs';
 import { getAllProjects } from '../actions/projects';
+import { getMyProjects } from '../actions/myProjects';
 
 
 class BugForm extends React.Component {
@@ -19,9 +20,9 @@ class BugForm extends React.Component {
   }
 
   componentDidMount() {                                   
-    this.props.getAllProjects().then(() => {
+    this.props.getMyProjects().then(() => {
       this.setState({
-        project: this.props.projects[0].id
+        project: this.props.myProjects[0].id
       })
     })
   }
@@ -60,10 +61,9 @@ class BugForm extends React.Component {
 
 
         <Form.Group className="mb-3">
-          <Form.Label>Project</Form.Label>
+          <Form.Label>Click below to select the a project for the ticket</Form.Label>
           <Form.Control
               as='select'
-              
               name="project"
               value={this.state.project}
               defaultValue={this.state.project.id}
@@ -72,7 +72,7 @@ class BugForm extends React.Component {
                   project: e.target.value
                 } )
               }}>
-              {this.props.projects.map((project) => 
+              {this.props.myProjects.map((project) => 
                  <option key={project.id} value={project.id}>
                   {project.attributes.title}
                 </option>
@@ -117,9 +117,9 @@ class BugForm extends React.Component {
 
 const mapStatetoProps = (state) => {
    return {
-    projects: state.projects
+    myProjects: state.myProjects
     // bugFormData: state.bugFormData
    }
 }
 
-export default connect(mapStatetoProps, {addBug, updateBugForm, createBug, clearBugForm, getAllProjects})(BugForm);
+export default connect(mapStatetoProps, {addBug, updateBugForm, createBug, clearBugForm, getAllProjects, getMyProjects})(BugForm);
