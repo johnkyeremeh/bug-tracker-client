@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import { getCurrentUser } from "../actions/currentUser";
-import Chart from "../components/chart";
+
 
 class DashboardContainer extends Component{
 
