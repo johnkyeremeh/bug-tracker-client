@@ -97,7 +97,7 @@ export const getMyProjects = () => {
 
     console.log("Starting task to get current user data")
     return (dispatch) => {
-        return fetch("http://localhost:3000/api/v1/projects", {
+        return fetch("https://salty-basin-75078.herokuapp.com/api/v1/projects", {
             credentials: "include",
             method: "GET",
             headers: {
@@ -141,7 +141,7 @@ export const createProject = (ProjectFormData) => {
       }
  
           console.log("Project being created", sendableProjectData)
-        return fetch("http://localhost:3000/api/v1/projects", {
+        return fetch("https://salty-basin-75078.herokuapp.com/api/v1/projects", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -176,7 +176,7 @@ export const createProject = (ProjectFormData) => {
     
     console.log("Getting project with id", id)
     return (dispatch) => {
-        return fetch(`http://localhost:3000/api/v1/projects/${id}`, {
+        return fetch(`https://salty-basin-75078.herokuapp.com/api/v1/projects/${id}`, {
             credentials: "include",
             method: "GET",
             headers: {
