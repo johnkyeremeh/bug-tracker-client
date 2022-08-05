@@ -5,6 +5,7 @@ import {connect} from "react-redux"
 
 import { updateProjectForm, clearProjectForm } from '../actions/projectForm';
 import { addProject, createProject } from '../actions/myProjects';
+import NavigationContainer from '../containers/NavigationContainer';
 
 class ProjectForm extends React.Component {
     
@@ -35,7 +36,8 @@ class ProjectForm extends React.Component {
 
   render(){
     return (
-
+      <>
+        <NavigationContainer />
       <Form onSubmit={this.handleSubmit}>
         <h3>Create your project</h3>
         <Form.Group className="mb-3" controlId="formBasicSummary"  >
@@ -52,6 +54,7 @@ class ProjectForm extends React.Component {
           Submit
         </Button>
       </Form>
+      </>
     );
   }
 

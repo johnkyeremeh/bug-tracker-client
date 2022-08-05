@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {connect} from "react-redux"
+import NavigationContainer from '../containers/NavigationContainer';
 
 import { updateBugForm, clearBugForm } from '../actions/bugForm';
 import {postUpdateBug, getBug} from '../actions/myBugs';
@@ -60,6 +61,8 @@ class BugEdit extends React.Component {
     const projectOptions = this.props.projects.map((project) => {return <option key={project.id} value={project.attributes.id}>{project.attributes.title}</option>})
     console.log(this.props.bug)
     return (
+      <>
+      <NavigationContainer />
       <Form onSubmit={this.handleSubmit}>
           <h4>Edit the ticket information below</h4>
           <Form.Group className="mb-3" controlId="formBasicSummary"  >
@@ -91,22 +94,6 @@ class BugEdit extends React.Component {
               )}
             </Form.Control>
         </Form.Group>
-
-        {/* <Form.Group className="mb-3">
-          <Form.Label>Project</Form.Label>
-          <Form.Control
-              as='select'
-              value={this.state.priority}
-              onChange={this.handleSelect}>
-              {this.props.projects.map((project) => 
-                 <option key={project.id}>
-                  {project.attributes.title}
-                </option>
-              )}
-            </Form.Control>
-
-        </Form.Group> */}
-
           <Form.Group className="mb-3" >
           <Form.Label>Status</Form.Label>
             <Form.Select label="Status" name="status" aria-label="Select the priority" onChange={this.handleChange} value={this.state.status}>
@@ -133,6 +120,7 @@ class BugEdit extends React.Component {
           Submit
         </Button>
       </Form>
+    </>
     );
   }
 

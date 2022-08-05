@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {connect} from "react-redux"
-
+import NavigationContainer from '../containers/NavigationContainer';
 import { updateBugForm, clearBugForm } from '../actions/bugForm';
 import { addBug, createBug} from '../actions/myBugs';
 import { getAllProjects } from '../actions/projects';
@@ -47,7 +47,8 @@ class BugForm extends React.Component {
 
   render(){
     return (
-
+      <>
+        <NavigationContainer />
       <Form onSubmit={this.handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicSummary"  >
           <Form.Label>Summary</Form.Label>
@@ -108,6 +109,7 @@ class BugForm extends React.Component {
           Submit
         </Button>
       </Form>
+    </>
     );
   }
 

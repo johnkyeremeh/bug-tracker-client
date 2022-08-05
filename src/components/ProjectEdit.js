@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {connect} from "react-redux"
+import NavigationContainer from '../containers/NavigationContainer';
 
 import { updateProjectForm, clearProjectForm } from '../actions/projectForm';
 import { postUpdateProject, getProject } from '../actions/myProjects';
@@ -42,7 +43,7 @@ class ProjectEdit extends React.Component {
     const description = this.state.description ? this.state.description : this.props.project.description;
     const user = this.props.project.relationships.user.data.id
     const project = {id: id, title: title, description: description, user: user}
-    
+
 
     this.props.postUpdateProject(project)
   }
@@ -52,6 +53,11 @@ class ProjectEdit extends React.Component {
   render(){
     
     return (
+    <>
+        <NavigationContainer />
+        
+        
+        
 
       <Form onSubmit={this.handleSubmit}>
         <h3>Edit project</h3>
@@ -69,6 +75,7 @@ class ProjectEdit extends React.Component {
           Submit
         </Button>
       </Form>
+      </>  
     );
   }
 
