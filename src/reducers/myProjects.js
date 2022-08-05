@@ -7,9 +7,9 @@ export default function myProjectsReducer(state = []
         case RECEIVE_PROJECTS:
           return action.payload.data
         case POST_PROJECTS_FAILURE:
-          return action.payload 
+          return action.payload.data
         case POST_PROJECTS_ERRORS:
-          return action.payload
+          return action.payload.data
         // case ADD_PROJECT:
         //     return [...state, action.payload]
         case REPLACE_PROJECT:
