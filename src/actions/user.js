@@ -11,7 +11,7 @@ export const userSignup = credentials => {
     
     return  dispatch => {
         
-        return fetch("http://localhost:3000/api/v1/signup", {
+        return fetch("https://salty-basin-75078.herokuapp.com/api/v1/signup", {
             method: "POST",
             credentials: "include",
             headers: {

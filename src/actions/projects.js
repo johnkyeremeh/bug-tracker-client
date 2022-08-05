@@ -31,7 +31,7 @@ export const postAllProjectsFailure = (err) => {
 export const getAllProjects = () => {
     console.log("Starting task to a list of all available projects")
     return (dispatch) => {
-        return fetch("http://localhost:3000/api/v1/all_projects", {
+        return fetch("https://salty-basin-75078.herokuapp.com/api/v1/all_projects", {
             credentials: "include",
             method: "GET",
             headers: {

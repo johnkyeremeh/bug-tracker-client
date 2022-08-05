@@ -95,7 +95,7 @@ export const getMyBugs = () => {
 
     console.log("Starting task to get current user data")
     return (dispatch) => {
-        return fetch("http://localhost:3000/api/v1/bugs", {
+        return fetch("https://salty-basin-75078.herokuapp.com/api/v1/bugs", {
             credentials: "include",
             method: "GET",
             headers: {
@@ -146,7 +146,7 @@ export const createBug = (BugFormData) => {
  
       
           console.log("Bug being created", BugFormData)
-        return fetch("http://localhost:3000/api/v1/bugs", {
+        return fetch("https://salty-basin-75078.herokuapp.com/api/v1/bugs", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -177,7 +177,7 @@ export const createBug = (BugFormData) => {
   export const getBug = (id) => {
     console.log("Getting bug with id", id)
     return (dispatch) => {
-        return fetch(`http://localhost:3000/api/v1/bugs/${id}`, {
+        return fetch(`https://salty-basin-75078.herokuapp.com/api/v1/bugs/${id}`, {
             credentials: "include",
             method: "GET",
             headers: {
@@ -219,7 +219,7 @@ export const postUpdateBug = (bug) => {
 
   console.log("Updating bug", id )
   return (dispatch) => {
-      return fetch(`http://localhost:3000/api/v1/bugs/${id}`, {
+      return fetch(`https://salty-basin-75078.herokuapp.com/api/v1/bugs/${id}`, {
           credentials: "include",
           method: "PATCH",
           headers: {
@@ -255,7 +255,7 @@ export const deleteBug = (id) => {
 
   console.log("Deleting bug", id )
   return (dispatch) => {
-      return fetch(`http://localhost:3000/api/v1/bugs/${id}`, {
+      return fetch(`https://salty-basin-75078.herokuapp.com/api/v1/bugs/${id}`, {
           credentials: "include",
           method: "DELETE",
           headers: {
