@@ -1,10 +1,15 @@
 import {Component} from "react"
 import React from "react";
 import Table from 'react-bootstrap/Table';
-
+import { getMyProjects } from "../actions/myProjects";
+import { connect } from "react-redux";
 import ProjectTable from "./ProjectTable";
 
 class MyProjectsList extends Component{
+
+  componentDidMount() {                                   
+    this.props.getMyProjects()
+  }
  
     render(){
       let myProjectsListItems
@@ -34,7 +39,13 @@ class MyProjectsList extends Component{
 }
 
 
-export default MyProjectsList
+const mapStatetoProps = (state) => {
+  return {  
+   myProjects: state.myProjects
+  }
+}
+
+export default connect(mapStatetoProps, {getMyProjects})(MyProjectsList)
 
 
 
