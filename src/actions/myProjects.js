@@ -206,10 +206,11 @@ export const postUpdateProject = (project) => {
   const id = project.id 
 
   
-debugger
+
   const sendableProjectData = {
     title: project.title,
     description: project.description,
+    user: project.user
   }
 
   console.log("Updating project", id )
@@ -226,21 +227,20 @@ debugger
       .then(data => {
         
           console.log("was able to fetch the current user. Here's the data:", data)
-          if (data !== undefined) {
+          if (data.errors){
+            alert(data.errors.map(error => error))
+          } else if (data !== undefined) {
+            
                dispatch(updateProject(data))
                dispatch(replaceProject(data))
                history.push("/myProjects")
-          } else {
-              alert(data.errors.map(error => error))
-              history.push("/myProjects")
-              // return dispatch({ type: POST_USER_ERRORS, payload: data })
-          }
+          } 
       })
       .then(() => {
         history.push("/myProjects")
       })
       .catch(err => {
-          // alert("Invalid Credentials: Unable to fetch user bug data")
+          alert("Invalid Credentials: Unable to fetch project data")
           // return dispatch({ type: POST_USER_FAILURE, payload: err })
       })
   }

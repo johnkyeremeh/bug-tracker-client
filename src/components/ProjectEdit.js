@@ -11,6 +11,7 @@ class ProjectEdit extends React.Component {
   state = {
     title: "",
     description: "",
+    user: ""
   }
 
   componentDidMount() {                                   
@@ -18,6 +19,7 @@ class ProjectEdit extends React.Component {
         this.setState({
           title: this.props.project.attributes.title,
           description: this.props.project.attributes.description
+
         })
     })
 }
@@ -38,8 +40,9 @@ class ProjectEdit extends React.Component {
     const id = this.props.project.id;
     const title = this.state.title ? this.state.title : this.props.project.title;
     const description = this.state.description ? this.state.description : this.props.project.description;
-
-    const project = {id: id, title: title, description: description}
+    const user = this.props.project.relationships.user.data.id
+    const project = {id: id, title: title, description: description, user: user}
+    
 
     this.props.postUpdateProject(project)
   }
