@@ -3,6 +3,7 @@ import {  deleteBug, getBug } from "../actions/myBugs";
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 // import Form from 'react-bootstrap/Form';
+import NavigationContainer from "../containers/NavigationContainer";
 import React from "react";
 class BugView extends Component{
 
@@ -18,6 +19,8 @@ class BugView extends Component{
         const bug = this.props.bug;
         
         return(
+            <>
+            <NavigationContainer />
             <div>
                 <h3>Bug Detail Information</h3>
                 <p>Summary: {bug.attributes && bug.attributes.summary} </p>
@@ -26,7 +29,8 @@ class BugView extends Component{
                 <p>status: {bug.attributes && bug.attributes.status} </p>
                 <p>priority: {bug.attributes && bug.attributes.priority} </p> 
                 <Link to={{ pathname: `/bugs/${bug.id}/edit`, state: { bug: bug } }} className='btn btn-info'>Edit Bug</Link> <button className="btn btn-danger" type="button" onClick={() => this.props.deleteBug(bug.id)}>Delete</button> 
-            </div>);
+            </div>
+            </>);
     }
 }
 
