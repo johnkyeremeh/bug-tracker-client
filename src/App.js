@@ -21,6 +21,7 @@ import myBugsView from './components/myBugsView';
 import myProjectView from './components/myProjectView';
 import ProjectView from './components/ProjectView';
 import ProjectForm from './components/ProjectForm';
+import ProjectEdit from './components/ProjectEdit';
 
 export const history = createBrowserHistory();
 
@@ -45,7 +46,7 @@ class App extends Component  {
           <Route exact path="/myprojects" component={myProjectView} />
           <Route exact path="/projects/new" component={ProjectForm} />
           <Route exact path="/projects/:id" component={ProjectView} />
-          <Route exact path="/projects/:id/edit" component={myProjectView} />
+          <Route exact path="/projects/:id/edit" component={ProjectEdit} />
 
           <Route exact path="/" component={LOH} />
           <Route exact path="/dashboard" component={Dashboard} />

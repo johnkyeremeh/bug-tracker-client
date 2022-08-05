@@ -33,11 +33,11 @@ class MainComponent extends Component{
        where the source code for this project has been well explained and documented.
       </Card.Text>
          <p>
-            <Button variant="primary">Learn more</Button>
+            <Button variant="primary" href="https://www.google.com/" target="_blank">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
+      {/* <small className="text-muted">Last updated 3 mins ago</small> */}
     </Card.Footer>
   </Card>
   <Card>
@@ -52,7 +52,7 @@ class MainComponent extends Component{
             </p>
     </Card.Body>
     <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
+      {/* <small className="text-muted">Last updated 3 mins ago</small> */}
     </Card.Footer>
   </Card>
   <Card>
@@ -66,7 +66,7 @@ class MainComponent extends Component{
             </p>
     </Card.Body>
     <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
+      {/* <small className="text-muted">Last updated 3 mins ago</small> */}
     </Card.Footer>
   </Card>
 </CardGroup>

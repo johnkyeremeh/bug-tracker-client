@@ -44,7 +44,7 @@ class ProjectView extends Component{
 
         const columns = [{
             dataField: 'id',
-            text: 'Product ID'
+            text: 'Bug ID'
           }, {
             dataField: 'summary',
             text: 'Summary'
@@ -55,7 +55,8 @@ class ProjectView extends Component{
             dataField: 'status',
             text: 'status',
             filter: textFilter()
-          }, {
+          },
+          {
             dataField: 'priority',
             text: 'priority',
             filter: textFilter()

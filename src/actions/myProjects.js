@@ -202,49 +202,49 @@ export const createProject = (ProjectFormData) => {
 }
 
 
-// export const postUpdateBug = (bug) => {
-//   const id = bug.id 
+export const postUpdateProject = (project) => {
+  const id = project.id 
 
   
+debugger
+  const sendableProjectData = {
+    title: project.title,
+    description: project.description,
+  }
 
-//   const sendableBugData = {
-//     summary: bug.summary,
-//     description: bug.description,
-//     status: bug.status,
-//     priority: bug.priority,
-//   }
-
-//   console.log("Updating bug", id )
-//   return (dispatch) => {
-//       return fetch(`http://localhost:3000/api/v1/bugs/${id}`, {
-//           credentials: "include",
-//           method: "PATCH",
-//           headers: {
-//               "Content-Type": "application/json",
-//           },
-//         body: JSON.stringify(sendableBugData)
-//       })
-//       .then(res => res.json())
-//       .then(data => {
+  console.log("Updating project", id )
+  return (dispatch) => {
+      return fetch(`http://localhost:3000/api/v1/projects/${id}`, {
+          credentials: "include",
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json",
+          },
+        body: JSON.stringify(sendableProjectData)
+      })
+      .then(res => res.json())
+      .then(data => {
         
-//           console.log("was able to fetch the current user. Here's the data:", data)
-//           if (data !== undefined) {
-//                dispatch(updateBug(data))
-//                dispatch(replaceBug(data))
-//           } else {
-//               // alert(data.errors.map(error => error))
-//               // return dispatch({ type: POST_USER_ERRORS, payload: data })
-//           }
-//       })
-//       .then(() => {
-//         history.push("/myBugs")
-//       })
-//       .catch(err => {
-//           // alert("Invalid Credentials: Unable to fetch user bug data")
-//           // return dispatch({ type: POST_USER_FAILURE, payload: err })
-//       })
-//   }
-// }
+          console.log("was able to fetch the current user. Here's the data:", data)
+          if (data !== undefined) {
+               dispatch(updateProject(data))
+               dispatch(replaceProject(data))
+               history.push("/myProjects")
+          } else {
+              alert(data.errors.map(error => error))
+              history.push("/myProjects")
+              // return dispatch({ type: POST_USER_ERRORS, payload: data })
+          }
+      })
+      .then(() => {
+        history.push("/myProjects")
+      })
+      .catch(err => {
+          // alert("Invalid Credentials: Unable to fetch user bug data")
+          // return dispatch({ type: POST_USER_FAILURE, payload: err })
+      })
+  }
+}
 
 
 // export const deleteBug = (id) => {
