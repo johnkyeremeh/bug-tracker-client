@@ -28,7 +28,7 @@ export const login = credentials => {
     return  dispatch => {
         
 
-        return  fetch("https://salty-basin-75078.herokuapp.com/api/v1/login", {
+        return  fetch("http://localhost:3000/api/v1/login", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -72,7 +72,7 @@ export const getCurrentUser = () => {
 
     console.log("DISPATCHING GET CURRENT USER")
     return  dispatch => {
-        return  fetch("https://salty-basin-75078.herokuapp.com/api/v1/get_current_user", {
+        return  fetch("http://localhost:3000/api/v1/get_current_user", {
             credentials: "include",
             method: "GET",
             headers: {
