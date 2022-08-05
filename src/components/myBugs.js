@@ -11,7 +11,9 @@ class MyBugsList extends Component{
     render(){
       let myBugsListItems
 
-  
+      // if (this.props.myBugs){
+      //   myBugsListItems =  this.props.myBugs.map(bug => < BugTable key={bug.id}  bug={bug} handleClick={this.props.handleClick} />)
+      // } 
 
       return (
         <>
@@ -29,7 +31,7 @@ class MyBugsList extends Component{
               <th>More Info</th>
             </tr>
           </thead>
-           
+           {/* {this.props.myBugs && myBugsListItems}  */}
         </Table>
         
         </>)

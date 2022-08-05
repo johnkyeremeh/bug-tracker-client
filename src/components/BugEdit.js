@@ -24,11 +24,7 @@ class BugEdit extends React.Component {
 
   componentDidMount() {                                   
     this.props.getBug(this.props.match.params.id);
-    this.props.getMyProjects().then(() => {
-      this.setState({
-        project: this.props.myProjects[0].id
-      })
-    })
+    
 }
 
 

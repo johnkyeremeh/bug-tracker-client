@@ -14,9 +14,9 @@ class MyProjectsList extends Component{
     render(){
       let myProjectsListItems
 
-      if (this.props.myProjects){
-        myProjectsListItems =  this.props.myProjects.map(project => <ProjectTable key={project.id}  project={project}  />)
-      } 
+      // if (this.props.myProjects){
+      //   myProjectsListItems =  this.props.myProjects.map(project => <ProjectTable key={project.id}  project={project}  />)
+      // } 
       
         
       console.log(this.props)
@@ -31,7 +31,7 @@ class MyProjectsList extends Component{
               <th>More Info</th>
             </tr>
           </thead>
-           {this.props.myProjects && myProjectsListItems} 
+           {/* {this.props.myProjects && myProjectsListItems}  */}
         </Table>
         
         </>)
