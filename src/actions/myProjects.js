@@ -176,7 +176,7 @@ export const createProject = (ProjectFormData) => {
     
     console.log("Getting project with id", id)
     return (dispatch) => {
-        return fetch(`hhttps://salty-basin-75078.herokuapp.com/api/v1/projects/${id}`, {
+        return fetch(`https://salty-basin-75078.herokuapp.com/api/v1/projects/${id}`, {
             credentials: "include",
             method: "GET",
             headers: {

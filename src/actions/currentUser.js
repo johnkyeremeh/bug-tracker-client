@@ -28,7 +28,7 @@ export const login = credentials => {
     return  dispatch => {
         
 
-        return  fetch("https://salty-basin-75078.herokuapp.com//api/v1/login", {
+        return  fetch("https://salty-basin-75078.herokuapp.com/api/v1/login", {
             method: "POST",
             credentials: "include",
             headers: {
