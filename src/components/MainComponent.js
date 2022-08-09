@@ -33,7 +33,7 @@ class MainComponent extends Component{
        where the source code for this project has been well explained and documented.
       </Card.Text>
          <p>
-            <Button variant="primary" href="https://www.google.com/" target="_blank">Learn more</Button>
+            <Button variant="primary" href="https://github.com/johnkyeremeh/bug-tracker-client" target="_blank">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
@@ -48,7 +48,7 @@ class MainComponent extends Component{
       which helped me remain on track and clearly describe the project's goals and scope.
       </Card.Text>
       <p>
-            <Button variant="primary">Learn more</Button>
+            <Button variant="primary" href="https://www.dropbox.com/s/ufwkk1rxu1a27fk/Software%20Requirements%20Specification%20John%20Kyeremeh.pdf?dl=0">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
@@ -62,7 +62,7 @@ class MainComponent extends Component{
         I have a video of the application being used, showcasing its core features for a user.
       </Card.Text>
       <p>
-            <Button variant="primary">Learn more</Button>
+            <Button variant="primary" href="https://share.vidyard.com/watch/HeSePaCcccj6LR9ZRnoN4X?">Learn more</Button>
             </p>
     </Card.Body>
     <Card.Footer>
