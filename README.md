@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/johnkyeremeh/micro_chat_app_frontend">
-   <img src="https://i.ibb.co/m4DKP9K/Screen-Shot-2022-05-24-at-10-03-12-AM.png" alt="Screen-Shot-2022-05-24-at-10-03-12-AM" border="0"></a>" 
+   <img src="https://johnkyeremeh.github.io/portfolio-website/images/bug-tracker-project-screenshot-b.png" alt="Screen-Shot-2022-05-24-at-10-03-12-AM" border="0"></a>" 
   </a>
 
 <h3 align="center">Ticket & Bug Tracker - Frontend</h3>
@@ -54,9 +54,9 @@
   
   Click the below video for more details:
 
-  Video Link Explainer: https://share.vidyard.com/watch/HeSePaCcccj6LR9ZRnoN4X?
+  Video Demo: https://share.vidyard.com/watch/HeSePaCcccj6LR9ZRnoN4X?
 
-  Link to back-end: https://leafy-bunny-662da6.netlify.app/
+  Link to back-end: https://github.com/johnkyeremeh/bug-tracker-app-server
 
 [![Product Name Screen Shot][product-screenshot]](<a href="https://github.com/johnkyeremeh/bug-tracker-client">
    <img src="https://johnkyeremeh.github.io/portfolio-website/images/bug-tracker-project-screenshot-hero.png" alt="Bug tracker hero" border="0"></a>" 
@@ -65,15 +65,15 @@
 
 ### Built With
 
-* [Rails]
-* [JQuery]
-* [JavaScript]
-* [HTML]
-* [CSS]
-* [ReactJS]
-* [Redux]
-* [React-Bootstrap]
-* [PostgreSQL]
+* Rails
+* JQuery
+* JavaScript
+* HTML
+* CSS
+* ReactJS
+* Redux]
+* React-Bootstrap
+* PostgreSQL
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -160,9 +160,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@JohnKyeremeh](https://twitter.com/JohnKyeremeh) - John.a.kyeremeh@gmail.com
+[@JohnKyeremeh](https://twitter.com/JohnKyeremeh) - Email: John.a.kyeremeh@gmail.com
 
-Project Links: [https://github.com/johnkyeremeh/bug-tracker-client](https://github.com/johnkyeremeh/bug-tracker-client)
+Project Links
+
+Client
+ [https://github.com/johnkyeremeh/bug-tracker-client](https://github.com/johnkyeremeh/bug-tracker-client)
+
+ Server
+
+ [https://github.com/johnkyeremeh/bug-tracker-app-server](https://github.com/johnkyeremeh/bug-tracker-app-server)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
