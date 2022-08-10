@@ -41,7 +41,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -159,8 +158,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
+Twitter
+[@JohnKyeremeh](https://twitter.com/JohnKyeremeh) 
 
-[@JohnKyeremeh](https://twitter.com/JohnKyeremeh) - Email: John.a.kyeremeh@gmail.com
+Email
+[john.a.kyeremeh@gmail.com](mailto:john.a.kyeremeh@gmail.com) 
 
 Project Links
 
