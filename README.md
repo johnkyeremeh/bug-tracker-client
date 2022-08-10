@@ -1,8 +1,91 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div id="top"></div>
 
-## Available Scripts
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/johnkyeremeh/micro_chat_app_frontend">
+   <img src="https://i.ibb.co/m4DKP9K/Screen-Shot-2022-05-24-at-10-03-12-AM.png" alt="Screen-Shot-2022-05-24-at-10-03-12-AM" border="0"></a>" 
+  </a>
+
+<h3 align="center">Ticket & Bug Tracker - Frontend</h3>
+  <p align="center">
+     A project management tool that's intended for use as an internal tool within an organization built mainly aimed to help developers and dev managers. The application's core functionality includes managing bugs, and projects, and allowing the users to manage, edit & complete tasks/bugs within the system. There will be authentication using local sessions for the project along with a DB connection to store the data..
+    <br />
+    <a href="https://github.com/johnkyeremeh/bug-tracker-client"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+     <a href="https://leafy-bunny-662da6.netlify.app/">Live Link</a>
+    ·
+    <a href="https://github.com/johnkyeremeh/bug-tracker-client/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/johnkyeremeh/bug-tracker-client/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+  A project management tool that's intended for use as an internal tool within an organization built mainly aimed to help developers and dev managers. The application's core functionality includes managing bugs, and projects, and allowing the users to manage, edit & complete tasks/bugs within the system. There will be authentication using local sessions for the project along with a DB connection to store the data
+  
+  Click the below video for more details:
+
+  Video Link Explainer: https://share.vidyard.com/watch/HeSePaCcccj6LR9ZRnoN4X?
+
+  Link to back-end: https://leafy-bunny-662da6.netlify.app/
+
+[![Product Name Screen Shot][product-screenshot]](<a href="https://github.com/johnkyeremeh/bug-tracker-client">
+   <img src="https://johnkyeremeh.github.io/portfolio-website/images/bug-tracker-project-screenshot-hero.png" alt="Bug tracker hero" border="0"></a>" 
+  </a>)
+
+
+### Built With
+
+* [Rails]
+* [JQuery]
+* [JavaScript]
+* [HTML]
+* [CSS]
+* [ReactJS]
+* [Redux]
+* [React-Bootstrap]
+* [PostgreSQL]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+1. Sign Up as a User
+2. Create a project
+3. Create bugs
+
+or Fork this repo and follow the below instructions:
 
 In the project directory, you can run:
 
@@ -39,32 +122,55 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+See the [open issues](https://github.com/johnkyeremeh/bug-tracker-client/issues) for a full list of proposed features (and known issues).
 
-### Code Splitting
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- CONTRIBUTING -->
+## Contributing
 
-### Making a Progressive Web App
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-### Advanced Configuration
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+<!-- LICENSE -->
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@JohnKyeremeh](https://twitter.com/JohnKyeremeh) - John.a.kyeremeh@gmail.com
+
+Project Links: [https://github.com/johnkyeremeh/bug-tracker-client](https://github.com/johnkyeremeh/bug-tracker-client)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+
+
+
+
+
