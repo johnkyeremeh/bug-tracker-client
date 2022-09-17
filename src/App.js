@@ -2,14 +2,14 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 
-import {Router, Switch, Route} from 'react-router-dom'
+import {Router, Switch, Route, Redirect} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 import React from "react";
 import {Component} from 'react'
 import {connect} from "react-redux"
 import { getCurrentUser } from './actions/currentUser';
 
-
+import ProtectedRoute from './components/ProtectedRoute';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import LOH from './components/LOH';
@@ -26,6 +26,8 @@ import ProjectEdit from './components/ProjectEdit';
 export const history = createBrowserHistory();
 
 
+
+
 class App extends Component  {
 
   componentDidMount(){
@@ -38,18 +40,18 @@ class App extends Component  {
       <Router history={history}>
       {/* {this.props.currentUser ? "Logged In ON" : "Logged Off"} */}
        <Switch>
-          <Route exact path="/mybugs" component={myBugsView} />
-          <Route exact path="/bugs/new" component={BugForm} />
-          <Route exact path="/bugs/:id" component={BugView} />
-          <Route exact path="/bugs/:id/edit" component={BugEdit} />
+          <ProtectedRoute exact path="/mybugs" component={myBugsView} />
+          <ProtectedRoute exact path="/bugs/new" component={BugForm} />
+          <ProtectedRoute exact path="/bugs/:id" component={BugView} />
+          <ProtectedRoute exact path="/bugs/:id/edit" component={BugEdit} />
 
-          <Route exact path="/myprojects" component={myProjectView} />
-          <Route exact path="/projects/new" component={ProjectForm} />
-          <Route exact path="/projects/:id" component={ProjectView} />
-          <Route exact path="/projects/:id/edit" component={ProjectEdit} />
+          <ProtectedRoute exact path="/myprojects" component={myProjectView} />
+          <ProtectedRoute exact path="/projects/new" component={ProjectForm} />
+          <ProtectedRoute exact path="/projects/:id" component={ProjectView} />
+          <ProtectedRoute exact path="/projects/:id/edit" component={ProjectEdit} />
 
           <Route exact path="/" component={LOH} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />          
           <Route path="*" component={NotFound}/>
@@ -70,7 +72,8 @@ function NotFound(){
 
 const mapStatetoProps = (state) => {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    loggedIn: state.loggedIn
   }
 }
 

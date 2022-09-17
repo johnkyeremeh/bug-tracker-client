@@ -46,10 +46,9 @@ export const login = credentials => {
             if (data !== undefined) {
                 
                 alert("Logging in...")
-                dispatch(setLoggedIn())
                  dispatch(setCurrentUser(data.user))
+                 dispatch(setLoggedIn())
                  dispatch(clearLoginForm())
-               
                  dispatch(getMyBugs())
                  history.push("/myprojects")
             
