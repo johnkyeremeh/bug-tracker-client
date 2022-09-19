@@ -48,6 +48,7 @@ export const login = credentials => {
                 alert("Logging in...")
                  dispatch(setCurrentUser(data.user))
                  dispatch(setLoggedIn())
+                 localStorage.setItem("isAuthenticated", "true");
                  dispatch(clearLoginForm())
                  dispatch(getMyBugs())
                  history.push("/myprojects")
@@ -58,7 +59,7 @@ export const login = credentials => {
             }
         })
         .catch(err => {
-            alert("Invalid Credentials: Unable to Sign In At This Time")
+            alert("Unable to Signup. Please make sure username and password are correct")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }
@@ -85,6 +86,7 @@ export const getCurrentUser = () => {
             if (data !== undefined) {
                 console.log("User data we are fetching", data)
                 dispatch(setLoggedIn())
+                localStorage.setItem("isAuthenticated", "true");
                  dispatch(setCurrentUser(data.user))
                  dispatch(clearLoginForm())
                  dispatch(getMyBugs())

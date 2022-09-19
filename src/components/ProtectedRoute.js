@@ -11,23 +11,18 @@ class ProtectedRoute extends Component {
 }
 
 
-   
-     componentDidMount(){
-       this.props.getCurrentUser()
-    }
-
     render(){
 
-    const { redirectPath, component, currentUser, loggedIn, ...routeProps} = this.props;
+    const { redirectPath, component, ...routeProps} = this.props;
     
     const Component = component;
-    const isAccessible = Boolean(currentUser) && loggedIn;
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
 
       return (
         <Route
           {...routeProps}
           render={props => {
-            if (isAccessible) return <Component {...props} />;
+            if (isAuthenticated) return <Component {...props} />;
             return <Redirect to={{ pathname: redirectPath || "/Login" }} />;
           }}
         />

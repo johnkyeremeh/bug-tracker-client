@@ -2,8 +2,6 @@ import { setLoggedIn } from "./auth";
 import { setCurrentUser } from "./currentUser";
 import { history } from "../App";
 
-// const CREATE_USER = 'CREATE_USER';
-
 export const userSignup = credentials => {
  
     console.log("crediantials are:", credentials)
@@ -31,12 +29,13 @@ export const userSignup = credentials => {
                 
                 alert("Logging in...")
                 dispatch(setLoggedIn())
+                localStorage.setItem("isAuthenticated", "true");
                  dispatch(setCurrentUser(data.user))
                  history.push("/myprojects")
             } 
         })
         .catch(err => {
-            alert("Unable to Signup At This Time")
+            alert("Unable to Signup. Please make sure username and password are correct")
             
           
             // return dispatch({ type: POST_USER_FAILURE, payload: err })

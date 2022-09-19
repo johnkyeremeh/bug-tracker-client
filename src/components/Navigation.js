@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import React from "react";
 import { clearCurrentUser } from '../actions/currentUser';
 import {connect} from "react-redux"
-
+import { setLoggedOut } from '../actions/auth';
 import { useHistory } from 'react-router-dom';
 
 // import Logout from './Logout';
@@ -22,7 +22,8 @@ function Navigation(props) {
     console.log("log out clicked")
     event.preventDefault()
     props.dispatch(clearCurrentUser())
-    props.dispatch(clearCurrentUser())
+    props.dispatch(setLoggedOut())
+    localStorage.clear();
     history.push("/login")
 }
 
@@ -61,4 +62,4 @@ function Navigation(props) {
   );
 }
 
-export default connect(null, {clearCurrentUser})(Navigation);
+export default connect(null, {clearCurrentUser, setLoggedOut})(Navigation);

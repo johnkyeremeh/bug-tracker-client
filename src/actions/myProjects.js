@@ -108,7 +108,7 @@ export const getMyProjects = () => {
         .then(data => {
             if (data.errors){
               console.log("Error occured")
-              alert(data.errors.map(error => error))
+              // alert(data.errors.map(error => error))
               return dispatch(postProjectsErrors(data))
             } else if (data !== undefined) {
         
@@ -120,7 +120,7 @@ export const getMyProjects = () => {
         })
         .catch(err => {
           
-            alert("Invalid Credentials: Unable to fetch current users projects")
+            // alert("Invalid Credentials: Unable to fetch current users projects")
             return dispatch(postProjectsFailure(err))
         })
     }
@@ -195,7 +195,7 @@ export const createProject = (ProjectFormData) => {
             }
         })
         .catch(err => {
-            alert("Invalisd Credentials: Unable to fetch project data")
+            // alert("Invalid Credentials: Unable to fetch project data")
             // return dispatch({ type: POST_USER_FAILURE, payload: err })
         })
     }
